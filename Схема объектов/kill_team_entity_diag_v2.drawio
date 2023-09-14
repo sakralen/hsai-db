@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-09-13T14:58:34.083Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="h3130aWsZ_dsJJifjzD0" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-09-14T14:34:06.499Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="wRQX0DjmSZpdnDsVJcP8" version="21.1.2" type="device">
   <diagram name="Страница 1" id="x1J_cCR0CuYF4QXd56yt">
-    <mxGraphModel dx="1027" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="864" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -20,13 +20,16 @@
           <mxGeometry x="100" y="260" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="jPjk46TfuHlNJ93suGcI-32" value="Вооружение&lt;br style=&quot;font-size: 20px;&quot;&gt;миниатюры" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="460" y="620" width="120" height="60" as="geometry" />
+          <mxGeometry x="281" y="620" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="erc7zpTAC2eEjMYiwTy_-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=none;startFill=0;fontSize=20;" parent="1" source="jPjk46TfuHlNJ93suGcI-34" target="jPjk46TfuHlNJ93suGcI-32" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="6HA-q_W-bqOeVNV1Hr_B-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="jPjk46TfuHlNJ93suGcI-34" target="erc7zpTAC2eEjMYiwTy_-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="jPjk46TfuHlNJ93suGcI-34" value="Миниатюра" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="640" y="620" width="120" height="60" as="geometry" />
+          <mxGeometry x="460" y="620" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="erc7zpTAC2eEjMYiwTy_-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=none;startFill=0;fontSize=20;" parent="1" source="erc7zpTAC2eEjMYiwTy_-1" target="erc7zpTAC2eEjMYiwTy_-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -51,7 +54,7 @@
         <mxCell id="erc7zpTAC2eEjMYiwTy_-5" value="Раунды игрока" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="460" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="UxmVXuUS_5VSfVQX4XQ5-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;fontSize=20;" parent="1" source="erc7zpTAC2eEjMYiwTy_-6" target="erc7zpTAC2eEjMYiwTy_-7" edge="1">
+        <mxCell id="6HA-q_W-bqOeVNV1Hr_B-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="erc7zpTAC2eEjMYiwTy_-6" target="6HA-q_W-bqOeVNV1Hr_B-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="erc7zpTAC2eEjMYiwTy_-6" value="Игрок" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
@@ -61,13 +64,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="erc7zpTAC2eEjMYiwTy_-7" value="Отряд" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="640" y="380" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="erc7zpTAC2eEjMYiwTy_-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=none;startFill=0;fontSize=20;" parent="1" source="erc7zpTAC2eEjMYiwTy_-8" target="jPjk46TfuHlNJ93suGcI-34" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry x="640" y="500" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="erc7zpTAC2eEjMYiwTy_-8" value="Состав отряда" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="640" y="500" width="120" height="60" as="geometry" />
+          <mxGeometry x="640" y="620" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="erc7zpTAC2eEjMYiwTy_-49" value="1" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="220" y="258" width="20" height="30" as="geometry" />
@@ -88,7 +88,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-4" value="Вооружение" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="280" y="620" width="120" height="60" as="geometry" />
+          <mxGeometry x="100" y="620" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-7" value="1" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="162" y="312" width="20" height="30" as="geometry" />
@@ -106,40 +106,52 @@
           <mxGeometry x="580" y="260" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-14" value="1" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="700" y="350" width="20" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="UxmVXuUS_5VSfVQX4XQ5-15" value="ꝏ" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="700" y="312" width="20" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="UxmVXuUS_5VSfVQX4XQ5-15" value="ꝏ" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="700" y="350" width="20" height="30" as="geometry" />
+        </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-16" value="1" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="700" y="433" width="20" height="30" as="geometry" />
+          <mxGeometry x="700" y="553" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-17" value="ꝏ" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="700" y="468" width="20" height="30" as="geometry" />
+          <mxGeometry x="700" y="588" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-18" value="ꝏ" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="700" y="549" width="20" height="30" as="geometry" />
+          <mxGeometry x="700" y="430" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-19" value="1" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="700" y="590" width="20" height="30" as="geometry" />
+          <mxGeometry x="700" y="470" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-20" value="ꝏ" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="582" y="620" width="20" height="30" as="geometry" />
+          <mxGeometry x="400" y="620" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-21" value="ꝏ" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="436" y="620" width="20" height="30" as="geometry" />
+          <mxGeometry x="261" y="620" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-22" value="1" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="622" y="620" width="20" height="30" as="geometry" />
+          <mxGeometry x="440" y="620" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="UxmVXuUS_5VSfVQX4XQ5-23" value="1" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="402" y="620" width="20" height="30" as="geometry" />
+          <mxGeometry x="220" y="620" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="IGCFP8xHJ6hlR0Gnc4Vj-3" value="1" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="520" y="350" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="IGCFP8xHJ6hlR0Gnc4Vj-5" value="ꝏ" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="520" y="310" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6HA-q_W-bqOeVNV1Hr_B-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="6HA-q_W-bqOeVNV1Hr_B-1" target="erc7zpTAC2eEjMYiwTy_-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="6HA-q_W-bqOeVNV1Hr_B-1" value="Отряд игрока" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="640" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6HA-q_W-bqOeVNV1Hr_B-5" value="ꝏ" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="620" y="620" width="20" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="6HA-q_W-bqOeVNV1Hr_B-6" value="1" style="text;whiteSpace=wrap;html=1;fontFamily=Verdana;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="580" y="620" width="20" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
