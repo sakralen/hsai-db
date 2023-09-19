@@ -1,0 +1,30 @@
+Tidewall Droneport|Баррикада|5
+Ork Barricades|Баррикада|5
+Barbed Wire|Баррикада|5
+Tau Raywall|Баррикада|4
+Improvised Barricade|Баррикада|6
+Stockades|Стена|4
+Aegis line|Стена|4
+Sector Imperialis Wall|Стена|4
+Wall of Martyrs Segment|Стена|3
+Ship wreckage|Стена|5
+Hab-bunker|Бункер|3
+Bossbunka|Бункер|4
+Hammerfall Bunker|Бункер|3
+Monastery|Бункер|4
+Biodome|Бункер|3
+Biospore|Объект|6
+Aegis turret|Объект|4
+Vox-Antenna|Объект|5
+Wall of Martyrs Command Post|Объект|4
+Titansfall|Объект|6
+Webway gate|Руина|6
+Sector Imperialis Ruins|Руина|5
+Convergence of Dominion|Руина|5
+Fallen Hero|Руина|4
+Wrecked Rhino|Руина|3
+Swamp Vegetation|Растение|6
+Jungle Vegetation|Растение|6
+Forrest Vegetation|Растение|6
+Xenos Vegetation|Растение|6
+Rocky Vegetation|Растение|6
