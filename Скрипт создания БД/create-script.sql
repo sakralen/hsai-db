@@ -14,6 +14,11 @@ faction_id INT PRIMARY KEY AUTO_INCREMENT,
 name CHAR(20) NOT NULL
 );
 
+CREATE TABLE Round (
+round_id INT PRIMARY KEY AUTO_INCREMENT,
+number TINYINT UNSIGNED NOT NULL,
+);
+
 CREATE TABLE Mission_card (
 mission_card_id INT PRIMARY KEY AUTO_INCREMENT,
 name CHAR(30) NOT NULL,
@@ -71,17 +76,6 @@ prefered_faction_id INT NOT NULL,
 
 FOREIGN KEY (prefered_faction_id) 
 REFERENCES Faction (faction_id) 
-ON DELETE RESTRICT ON UPDATE RESTRICT
-);
-
-CREATE TABLE Round (
-round_id INT PRIMARY KEY AUTO_INCREMENT,
-number TINYINT UNSIGNED NOT NULL,
-acquired_points TINYINT UNSIGNED NOT NULL,
-mission_card_id INT NOT NULL,
-
-FOREIGN KEY (mission_card_id) 
-REFERENCES Mission_card (mission_card_id) 
 ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
@@ -154,6 +148,8 @@ session_rounds_id INT PRIMARY KEY AUTO_INCREMENT,
 game_session_id INT NOT NULL,
 player_id INT NOT NULL,
 round_id INT NOT NULL,
+mission_card_id INT NOT NULL,
+acquired_points TINYINT UNSIGNED NOT NULL,
 
 FOREIGN KEY (game_session_id) 
 REFERENCES Game_session (game_session_id) 
@@ -165,5 +161,9 @@ ON DELETE RESTRICT ON UPDATE RESTRICT,
 
 FOREIGN KEY (round_id) 
 REFERENCES Round (round_id) 
+ON DELETE RESTRICT ON UPDATE RESTRICT,
+
+FOREIGN KEY (mission_card_id) 
+REFERENCES Mission_card (mission_card_id) 
 ON DELETE RESTRICT ON UPDATE RESTRICT
 );
