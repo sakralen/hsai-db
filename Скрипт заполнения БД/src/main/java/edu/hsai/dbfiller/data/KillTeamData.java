@@ -1,12 +1,20 @@
-public class Data {
+package edu.hsai.dbfiller.data;
+
+public class KillTeamData {
+    /*GENERAL DATA*/
+    public static final int ROUNDS_IN_SESSION_COUNT = 4;
+    public static final int PLAYERS_IN_SESSION_COUNT = 2;
+    /*!GENERAL DATA*/
+
     /*ROUNDS*/
-    static final int[] ROUNDS_VALUES = {1, 2, 3, 4};
-    static final int ROUND_POINT_LOW = 0;
-    static final int ROUND_POINTS_HIGH = 10;
+    public static final int[] ROUNDS_VALUES = {1, 2, 3, 4};
+    public static final int ROUND_POINT_LOW = 0;
+    public static final int ROUND_POINTS_HIGH = 10;
     /*!ROUNDS*/
 
     /*MISSION CARDS*/
-    static final String[][] MISSION_CARDS_VALUES = {
+    public static final int MISSION_CARDS_FIELDS_COUNT  = 3;
+    public static final String[][] MISSION_CARDS_VALUES = {
         {"HEADHUNTER", "Reveal this Tac Op when an enemy LEADER operative is incapacitated.", "3"},
         {"CHALLENGE", "Reveal this Tac Op in the Target Reveal step of the first Turning Point." + 
             " Select one enemy operative and one friendly operative.", "2"},
@@ -14,13 +22,13 @@ public class Data {
         {"EXECUTION", "Reveal this Tac Op at the end of any Turning Point" +
             " in which more enemy operatives than friendly operatives were incapacitated during that Turning Point.", "4"},
         {"DEADLY MARKSMAN", "After selecting this Tac Op, secretly select one friendly operative to be your Marksman." + 
-            " You can reveal this Tac Op when an enemy operative is incapacitated by a shooting attack made by your" + 
+            " You can reveal this Tac Op when an enemy operative is incapacitated by a shooting attack made by your" +
             " Marksman while your Marksman is wholly within 1 of your drop zone.", "1"},
         {"ROB AND RANSACK", "You can reveal this Tac Op when an enemy operative is incapacitated by a" +
-            " friendly operative within 1 triangle of it," + 
+            " friendly operative within 1 triangle of it," +
             " and that friendly operative is more than 3 squares  from other enemy operatives.", "3"},
         {"SEIZE GROUND", "Reveal this Tac Op in the Target Reveal step of the first Turning Point." + 
-            " Select one terrain feature that is more than 3 squares from your" + 
+            " Select one terrain feature that is more than 3 squares from your" +
             " drop zone and includes any parts with the Heavy trait.", "2"},
         {"HOLD THE LINE", "You can reveal this Tac Op in the Target Reveal step of any Turning Point after the first.", "4"},
         {"PROTECT ASSETS", "You can reveal this Tac Op in the Target Reveal step of any Turning Point.", "5"},
@@ -52,43 +60,49 @@ public class Data {
     /*!MISSION CARDS*/
 
     /*MANUFACTURERS*/
-    static final String[] MANUFACTURERS_VALUES = {
-        "Games Worshop", "Forgeworld", "Kromlech", 
+    public static final String[] MANUFACTURERS_VALUES = {
+        "Games Workshop", "Forgeworld", "Kromlech",
         "Artel W", "Liber Daemonica", "Puppetswar", 
         "Templar Forge", "Warp Master", "OrkWorkshop"
     };
     /*!MANUFACTURERS*/
 
     /*FACTIONS*/
-    static final String[] FACTION_VALUES = {
+    public static final String[] FACTION_VALUES = {
+        "Adepta Sororitas", "Adeptus Mechanicus", "Agents of Imperium",
         "Adeptus Custodes", "Adeptus Mechanicus", "Astra Militarum", 
-        "Grey Knights", "Space Marines", "Chaos Daemons", 
-        "Cultists", "Death Guard", "Thousand Sons", 
-        "Corsairs", "Craftworlds", "Drukhari", 
-        "Harlequins", "Necron", "Orks", "Tau Empire"
+        "Grey Knights", "Space Marines", "Chaos Daemons", "Chaos Space Marines",
+        "Cultists", "Death Guard", "Thousand Sons", "Corsairs", "Craftworlds", "Drukhari", 
+        "Harlequins", "Genestealer Cults", "Kroot", "Necron", "Orks", "Tau Empire",
+        "Tyranids", "Leagues of Votann"
     };
     /*!FACTIONS*/
 
     /*SQUADS*/
-    static final String[] SQAUD_VALUES = {
+    public static final String[] SQUAD_VALUES = {
         "Talons of the Emperor", "Hunter Clade", "Kasrkin", "Veteran Guardsman",
         "Grey Knight", "Intercession Squad", "Phobos Strike Team", "Legionary",
         "Traitor Space Marine", "Blooded", "Chaos Cult", "Death Guard", "Warpcoven",
         "Corsair Voidscarred", "Craftworld", "Commorrite", "Hand of the Archon",
         "Void-dancer Troupe", "Hierotek Circle", "Tomb World", "Greenskin",
-        "Kommando", "Hunter Cadre", "Pathfinder"
+        "Kommando", "Hunter Cadre", "Pathfinder", "Ecclesiarchy", "Novitiate",
+        "Elucidian Starstrider", "Exaction Squad", "Imperial Navy Breachers",
+        "Inquisitorial Agent", "Imperial Guard", "Space Marine", "Strike Force Justian",
+        "Gellerpox Infected", "Fellgor Ravager", "Brood Coven", "Wyrmblade", 
+        "Cadre Mercenary", "Farstalker Kinbad", "Hearthkyn Salvager", "Hive Fleet"
     };
     /*!SQUADS*/
 
     /*GAME FIELDS*/
-    static final String[] GAME_FIELDS_TYPES_VALUES = {
+    public static final String[] GAME_FIELDS_TYPES_VALUES = {
         "Город Пустыня", "Лес", "Космический корабль", 
         "Подземелье", "Крепость", "Небесный город"
     };
     /*!GAME FIELDS*/
 
     /*TERRAIN PIECES*/
-    static final String[][] TERRAIN_PIECES_VALUES = {
+    public static final int TERRAIN_PIECES_FIELDS_COUNT = 3;
+    public static final String[][] TERRAIN_PIECES_VALUES = {
         {"Tidewall Droneport", "Баррикада", "5"}, {"Ork Barricades", "Баррикада", "5"},
         {"Barbed Wire", "Баррикада", "5"}, {"Tau Raywall", "Баррикада", "4"},
         {"Improvised Barricade", "Баррикада", "6"}, {"Stockades", "Стена", "4"},
@@ -108,7 +122,9 @@ public class Data {
     /*!TERRAIN PIECES*/
 
     /*MINIATURES*/
-    static final String[][] MINIATURES_VALUES = {
+    public static final int MINIATURES_FIELDS_COUNT = 6;
+    public static final int MINIATURES_STATS_COUNT = 5;
+    public static final String[][] MINIATURES_VALUES = {
         {"CUSTODIAN GUARD (WARRIOR)", "3", "3", "3", "2", "18"}, {"CUSTODIAN GUARD (LEADER)", "3", "3", "3", "2", "19"},
         {"SISTER OF SILENCE PROSECUTOR", "3", "2", "3", "3", "8"}, {"SISTER OF SILENCE WITCHSEEKER", "3", "2", "3", "3", "8"},
         {"SISTER OF SILENCE VIGILATOR", "3", "2", "3", "3", "8"}, {"SISTER OF SILENCE SUPERIOR", "3", "2", "3", "3", "9"},
@@ -223,7 +239,7 @@ public class Data {
     /*!MINIATURES*/
 
     /*LOCATIONS*/
-    static final String[] LOCATION_VALUES = {
+    public static final String[] LOCATION_VALUES = {
         "Игровой Альянс, Игровой Альянс Невский проспект, дом 25",
         "Досочные Стратегии, Улица Рубинштейна, дом 14",
         "Карточная Гармония, Большой проспект Васильевского острова, дом 45",
@@ -238,27 +254,27 @@ public class Data {
     /*!LOCATIONS*/
 
     /*NAMES*/
-    static final String[][] MALE_NAMES = {
+    public static final String[] MALE_NAMES = {
         "Александр", "Дмитрий", "Иван", "Михаил", "Сергей", "Андрей", "Владимир", "Николай", 
         "Павел", "Артем", "Егор", "Антон", "Григорий", "Виктор", "Максим","Юрий", "Денис", 
         "Василий", "Роман", "Вячеслав", "Олег", "Игорь", "Тимофей", "Алексей", "Виталий"
     };
 
-    static final String[][] FEMALE_NAMES = {
+    public static final String[] FEMALE_NAMES = {
         "Екатерина", "Ольга", "Анна", "Наталья", "Мария", "Татьяна", "Елена", "Ирина",
         "Светлана", "Ангелина", "Александра", "Виктория", "Надежда", "Юлия",
         "Алина", "Евгения", "Оксана", "Анастасия", "Валентина", "Лариса",
         "Галина", "Тамара", "Маргарита", "Людмила", "Дарья"
     };
 
-    static final String[][] MALE_SURNAMES = {
+    public static final String[] MALE_SURNAMES = {
         "Иванов", "Смирнов",  "Петров", "Соколов", "Кузнецов", "Васильев", "Морозов",
         "Новиков", "Федоров", "Волков", "Козлов", "Лебедев", "Семенов", "Егоров",
         "Павлов", "Козлов", "Сергеев", "Макаров", "Андреев", "Захаров", "Дмитриев", 
         "Гусев", "Киселев", "Ильин", "Максимов"
     };
 
-    static final String[][] FEMALE_SURNAMES = {
+    public static final String[] FEMALE_SURNAMES = {
         "Иванова", "Смирнова", "Петрова", "Соколова", "Кузнецова", "Васильева", "Морозова",
         "Новикова", "Федорова", "Волкова", "Козлова", "Лебедева", "Семенова", "Егорова",
         "Павлова", "Козлова", "Сергеева", "Макарова", "Андреева", "Захарова", "Дмитриева",
