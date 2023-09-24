@@ -40,78 +40,123 @@ public class DbFiller {
                 SESSION_ROUNDS_COUNT);
     }
 
-    public static void writePreamble(String path) {
+    public static void writeOpening(String path) {
         String preamble = "USE " + DB_NAME + LINE_SEPARATOR + LINE_SEPARATOR;
         writeToFile(preamble, path);
     }
 
-    public static void fillDictionaries(String path) {
+    public static void fillSmallTables(String path) {
         /*PRIORITY 1*/
+        /*MANUFACTURERS*/
+        StringBuilder manufacturersInsertSb = new StringBuilder();
+        manufacturersInsertSb.append(INSERT_INTO).append(MANUFACTURER_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < MANUFACTURERS_COUNT; i++) {
-            String singleInsert = INSERT_INTO + MANUFACTURER_TABLE + LINE_SEPARATOR +
-                    VALUES + "(" + APOSTROPHE + MANUFACTURERS_VALUES[i] + APOSTROPHE + ")" +
-                    ";" + LINE_SEPARATOR + LINE_SEPARATOR;
-            writeToFile(singleInsert, path);
+            manufacturersInsertSb.append("(")
+                    .append(APOSTROPHE).append(MANUFACTURERS_VALUES[i]).append(APOSTROPHE)
+                    .append(")").append((i != (MANUFACTURERS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
+        writeToFile(manufacturersInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!MANUFACTURERS*/
 
+        /*FACTIONS*/
+        StringBuilder factionsInsertSb = new StringBuilder();
+        factionsInsertSb.append(INSERT_INTO).append(FACTION_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < FACTIONS_COUNT; i++) {
-            String singleInsert = INSERT_INTO + FACTION_TABLE + LINE_SEPARATOR +
-                    VALUES + "(" + APOSTROPHE + FACTION_VALUES[i] + APOSTROPHE + ")" +
-                    ";" + LINE_SEPARATOR + LINE_SEPARATOR;
-            writeToFile(singleInsert, path);
+            factionsInsertSb.append("(")
+                    .append(APOSTROPHE).append(FACTION_VALUES[i]).append(APOSTROPHE)
+                    .append(")").append((i != (FACTIONS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
+        writeToFile(factionsInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!FACTIONS*/
 
+        /*GAME FIELDS*/
+        StringBuilder fieldsInsertSb = new StringBuilder();
+        fieldsInsertSb.append(INSERT_INTO).append(GAME_FIELD_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < GAME_FIELDS_COUNT; i++) {
-            String singleInsert = INSERT_INTO + GAME_FIELD_TABLE + LINE_SEPARATOR +
-                    VALUES + "(" + APOSTROPHE + GAME_FIELDS_TYPES_VALUES[i] + APOSTROPHE + ")" +
-                    ";" + LINE_SEPARATOR + LINE_SEPARATOR;
-            writeToFile(singleInsert, path);
+            fieldsInsertSb.append("(")
+                    .append(APOSTROPHE).append(GAME_FIELDS_TYPES_VALUES[i]).append(APOSTROPHE)
+                    .append(")").append((i != (GAME_FIELDS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
+        writeToFile(fieldsInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!GAME FIELDS*/
 
+        /*ROUNDS*/
+        StringBuilder roundsInsertSb = new StringBuilder();
+        roundsInsertSb.append(INSERT_INTO).append(ROUND_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < ROUNDS_COUNT; i++) {
-            String singleInsert = INSERT_INTO + ROUND_TABLE + LINE_SEPARATOR +
-                    VALUES + "(" + ROUNDS_VALUES[i] + ")" +
-                    ";" + LINE_SEPARATOR + LINE_SEPARATOR;
-            writeToFile(singleInsert, path);
+            roundsInsertSb.append("(")
+                    .append(APOSTROPHE).append(ROUNDS_VALUES[i]).append(APOSTROPHE)
+                    .append(")").append((i != (ROUNDS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
+        writeToFile(roundsInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!ROUNDS*/
 
+        /*MISSION CARDS*/
+        StringBuilder missionCardsInsertSb = new StringBuilder();
+        missionCardsInsertSb.append(INSERT_INTO).append(MISSION_CARD_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < MISSION_CARDS_COUNT; i++) {
-            String singleInsert = INSERT_INTO + MISSION_CARD_TABLE + LINE_SEPARATOR +
-                    VALUES + "(" + APOSTROPHE + MISSION_CARDS_VALUES[i][0] +
-                    APOSTROPHE + ", " + APOSTROPHE + MISSION_CARDS_VALUES[i][1] +
-                    APOSTROPHE + ", " + MISSION_CARDS_VALUES[i][2] + ")" +
-                    ";" + LINE_SEPARATOR + LINE_SEPARATOR;
-            writeToFile(singleInsert, path);
+            missionCardsInsertSb.append("(")
+                    .append(APOSTROPHE).append(MISSION_CARDS_VALUES[i][0]).append(APOSTROPHE).append(", ")
+                    .append(APOSTROPHE).append(MISSION_CARDS_VALUES[i][1]).append(APOSTROPHE).append(", ")
+                    .append(MISSION_CARDS_VALUES[i][2])
+                    .append(")").append((i != (MISSION_CARDS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
+        writeToFile(missionCardsInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!MISSION CARDS*/
 
         /*PRIORITY 2*/
+        /*TERRAIN PIECES*/
+        StringBuilder terrainPiecesInsertSb = new StringBuilder();
+        terrainPiecesInsertSb.append(INSERT_INTO).append(TERRAIN_PIECE_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < TERRAIN_PIECES_COUNT; i++) {
-            String singleInsert = INSERT_INTO + TERRAIN_PIECE_TABLE + LINE_SEPARATOR +
-                    VALUES + "(" + APOSTROPHE + TERRAIN_PIECES_VALUES[i][0] +
-                    APOSTROPHE + ", " + APOSTROPHE + TERRAIN_PIECES_VALUES[i][1] +
-                    APOSTROPHE + ", " + TERRAIN_PIECES_VALUES[i][2] + ")" +
-                    ";" + LINE_SEPARATOR + LINE_SEPARATOR;
-            writeToFile(singleInsert, path);
+            terrainPiecesInsertSb.append("(")
+                    .append(APOSTROPHE).append(TERRAIN_PIECES_VALUES[i][0]).append(APOSTROPHE).append(", ")
+                    .append(APOSTROPHE).append(TERRAIN_PIECES_VALUES[i][1]).append(APOSTROPHE).append(", ")
+                    .append(TERRAIN_PIECES_VALUES[i][2]).append(", ")
+                    .append(RANDOM.nextInt(MANUFACTURERS_COUNT) + 1)
+                    .append(")").append((i != (TERRAIN_PIECES_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
+        writeToFile(terrainPiecesInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!TERRAIN PIECES*/
 
+        /*MINIATURES*/
+        StringBuilder miniaturesInsertSb = new StringBuilder();
+        miniaturesInsertSb.append(INSERT_INTO).append(MINIATURE_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < MINIATURES_COUNT; i++) {
-            String singleInsert = INSERT_INTO + MINIATURE_TABLE + LINE_SEPARATOR +
-                    VALUES + "(" + APOSTROPHE + MINIATURES_VALUES[i][0]
-                    + APOSTROPHE + ", " +
-                    Stream.of(MINIATURES_VALUES[i]).skip(1).limit(5)
-                            .collect(Collectors.joining(", "))
-                    + ")" + ";" + LINE_SEPARATOR + LINE_SEPARATOR;
-            writeToFile(singleInsert, path);
+            miniaturesInsertSb.append("(")
+                    .append(APOSTROPHE).append(MINIATURES_VALUES[i][0]).append(APOSTROPHE).append(", ")
+                    .append(Stream.of(MINIATURES_VALUES[i]).skip(1).limit(5)
+                            .collect(Collectors.joining(", "))).append(", ")
+                    .append(RANDOM.nextInt(MANUFACTURERS_COUNT) + 1)
+                    .append(")").append((i != (MINIATURES_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
+        writeToFile(miniaturesInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!MINIATURES*/
 
+        /*SQUADS*/
+        StringBuilder squadsInsertSb = new StringBuilder();
+        squadsInsertSb.append(INSERT_INTO).append(SQUAD_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < SQUADS_COUNT; i++) {
-            String singleInsert = INSERT_INTO + SQUAD_TABLE + LINE_SEPARATOR +
-                    VALUES + "(" + APOSTROPHE + SQUAD_VALUES[i] + APOSTROPHE +
-                    ", " + (RANDOM.nextInt(FACTIONS_COUNT) + 1) + ")" +
-                    ";" + LINE_SEPARATOR + LINE_SEPARATOR;
-            writeToFile(singleInsert, path);
+            squadsInsertSb.append("(")
+                    .append(APOSTROPHE).append(SQUAD_VALUES[i]).append(APOSTROPHE).append(", ")
+                    .append(RANDOM.nextInt(FACTIONS_COUNT) + 1)
+                    .append(")").append((i != (SQUADS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
+        writeToFile(squadsInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!SQUADS*/
 
+        /*PLAYERS*/
+        StringBuilder playersInsertSb = new StringBuilder();
+        playersInsertSb.append(INSERT_INTO).append(PLAYER_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < PLAYERS_COUNT; i++) {
             String name;
             String surname;
@@ -123,16 +168,54 @@ public class DbFiller {
                 surname = FEMALE_SURNAMES[RANDOM.nextInt(FEMALE_SURNAMES.length)];
             }
 
-            String singleInsert = INSERT_INTO + PLAYER_TABLE + LINE_SEPARATOR +
-                    VALUES + "(" + APOSTROPHE + name + APOSTROPHE +
-                    ", " + APOSTROPHE + surname + APOSTROPHE + ", " +
-                    (RANDOM.nextInt(FACTIONS_COUNT) + 1) + ")" +
-                    ";" + LINE_SEPARATOR + LINE_SEPARATOR;
-            writeToFile(singleInsert, path);
+            playersInsertSb.append("(")
+                    .append(APOSTROPHE).append(name).append(APOSTROPHE).append(", ")
+                    .append(APOSTROPHE).append(surname).append(APOSTROPHE).append(", ")
+                    .append(RANDOM.nextInt(FACTIONS_COUNT) + 1)
+                    .append(")").append((i != (PLAYERS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
+        writeToFile(playersInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!PLAYERS*/
+
+        /*PRIORITY 3*/
+        /*FIELD TERRAIN*/
+        StringBuilder fieldTerrainInsertSb = new StringBuilder();
+        fieldTerrainInsertSb.append(INSERT_INTO).append(FIELD_TERRAIN_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
+        for (int i = 0; i < FIELD_TERRAIN_COUNT; i++) {
+            fieldTerrainInsertSb.append("(")
+                    .append(RANDOM.nextInt(GAME_FIELDS_COUNT) + 1).append(", ")
+                    .append(RANDOM.nextInt(TERRAIN_PIECES_COUNT) + 1)
+                    .append(")").append((i != (FIELD_TERRAIN_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+        }
+        writeToFile(fieldTerrainInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!FIELD TERRAIN*/
+
+        /*MINIATURE IN SQUAD*/
+        StringBuilder miniInSquadInsertSb = new StringBuilder();
+        miniInSquadInsertSb.append(INSERT_INTO).append(MINIATURE_IN_SQUAD_TABLE).append(LINE_SEPARATOR)
+                .append(VALUES).append(LINE_SEPARATOR);
+        for (int i = 0; i < MINIATURE_IN_SQUAD_COUNT; i++) {
+            miniInSquadInsertSb.append("(")
+                    .append(RANDOM.nextInt(SQUADS_COUNT) + 1).append(", ")
+                    .append(RANDOM.nextInt(MINIATURES_COUNT) + 1)
+                    .append(")").append((i != (MINIATURE_IN_SQUAD_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+        }
+        writeToFile(miniInSquadInsertSb.append(LINE_SEPARATOR).toString(), path);
+        /*!MINIATURE IN SQUAD*/
     }
 
-    public static void fillOtherTables(String path) {
+    public static void fillLargeTables(String path) {
+        /*PRIORITY 3*/
+        /*PLAYER ROSTER*/
+        /*!PLAYER ROSTER*/
 
+        /*PRIORITY 4*/
+        /*GAME SESSIONS*/
+        /*!GAME SESSIONS*/
+
+        /*PRIORITY 5*/
+        /*SESSION ROUNDS*/
+        /*!SESSION ROUNDS*/
     }
 }

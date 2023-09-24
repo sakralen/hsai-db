@@ -95,7 +95,7 @@ public class KillTeamData {
 
     /*GAME FIELDS*/
     public static final String[] GAME_FIELDS_TYPES_VALUES = {
-        "Город Пустыня", "Лес", "Космический корабль", 
+        "Город", "Пустыня", "Лес", "Космический корабль",
         "Подземелье", "Крепость", "Небесный город"
     };
     /*!GAME FIELDS*/
