@@ -43,8 +43,13 @@ public class DbFiller {
     }
 
     public static void writeOpening(String path) {
-        String preamble = "USE " + DB_NAME + ";" + LINE_SEPARATOR + LINE_SEPARATOR;
+        String preamble = "USE " + DB_NAME + ";" + LINE_SEPARATOR + LINE_SEPARATOR
+                + "SET FOREIGN_KEY_CHECKS = 0;" + LINE_SEPARATOR + LINE_SEPARATOR;
         writeToFile(preamble, path);
+    }
+
+    public static void writeClosing(String path) {
+        writeToFile("SET FOREIGN_KEY_CHECKS = 1;" + LINE_SEPARATOR, path);
     }
 
     public static void fillSmallTables(String path) {

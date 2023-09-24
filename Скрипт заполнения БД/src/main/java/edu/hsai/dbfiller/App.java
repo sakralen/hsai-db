@@ -1,27 +1,28 @@
 package edu.hsai.dbfiller;
 
-import static edu.hsai.dbfiller.DbFiller.*;
-
 public class App {
     public static void main(String[] args) {
         String parameter = args[0];
         String path = args.length == 2 ? args[1] : null;
         switch (parameter) {
             case "-i" -> {  // print info
-                printDictionariesCount();
+                DbFiller.printDictionariesCount();
             }
             case "-s" -> {  // fill small tables
-                writeOpening(path);
-                fillSmallTables(path);
+                DbFiller.writeOpening(path);
+                DbFiller.fillSmallTables(path);
+                DbFiller.writeClosing(path);
             }
             case "-l" -> {  // fill large tables
-                writeOpening(path);
-                fillLargeTables(path);
+                DbFiller.writeOpening(path);
+                DbFiller.fillLargeTables(path);
+                DbFiller.writeClosing(path);
             }
             case "-a" -> { // fill all tables
-                writeOpening(path);
-                fillSmallTables(path);
-                fillLargeTables(path);
+                DbFiller.writeOpening(path);
+                DbFiller.fillSmallTables(path);
+                DbFiller.fillLargeTables(path);
+                DbFiller.writeClosing(path);
             }
         }
     }

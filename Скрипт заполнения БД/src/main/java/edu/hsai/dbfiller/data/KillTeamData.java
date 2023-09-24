@@ -6,7 +6,7 @@ public class KillTeamData {
     /*GENERAL DATA*/
     public static final int ROUNDS_IN_SESSION_COUNT = 4;
     public static final int PLAYERS_IN_SESSION_COUNT = 2;
-    public static final long DATE_LOW = LocalDate.of(2020, 1, 1).toEpochDay();
+    public static final long DATE_LOW = LocalDate.of(2022, 1, 1).toEpochDay();
     public static final long DATE_HIGH = LocalDate.of(2023, 1, 1).toEpochDay();
     /*!GENERAL DATA*/
 
