@@ -6,35 +6,35 @@ USE kill_team_db_v1;
 
 CREATE TABLE Manufacturer (
 manufacturer_id INT PRIMARY KEY AUTO_INCREMENT,
-name CHAR(20) NOT NULL
+manufacturer_name CHAR(20) NOT NULL
 );
 
 CREATE TABLE Faction (
 faction_id INT PRIMARY KEY AUTO_INCREMENT,
-name CHAR(20) NOT NULL
+faction_name CHAR(20) NOT NULL
 );
 
 CREATE TABLE Round (
 round_id INT PRIMARY KEY AUTO_INCREMENT,
-number TINYINT UNSIGNED NOT NULL
+round_number TINYINT UNSIGNED NOT NULL
 );
 
 CREATE TABLE Mission_card (
 mission_card_id INT PRIMARY KEY AUTO_INCREMENT,
-name CHAR(30) NOT NULL,
+mission_card_name CHAR(30) NOT NULL,
 prerequisite VARCHAR(400) NOT NULL,
 points TINYINT UNSIGNED NOT NULL
 );
 
 CREATE TABLE Game_field (
 game_field_id INT PRIMARY KEY AUTO_INCREMENT,
-type VARCHAR(20) NOT NULL
+game_field_type VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE Terrain_piece (
 terrain_piece_id INT PRIMARY KEY AUTO_INCREMENT,
-name VARCHAR(30) NOT NULL,
-type VARCHAR(20) NOT NULL,
+terrain_piece_name VARCHAR(30) NOT NULL,
+terrain_piece_type VARCHAR(20) NOT NULL,
 saving_throw_modifier TINYINT UNSIGNED NOT NULL,
 manufacturer_id INT NOT NULL,
 
@@ -45,7 +45,7 @@ ON DELETE RESTRICT ON UPDATE RESTRICT
 
 CREATE TABLE Miniature (
 miniature_id INT PRIMARY KEY AUTO_INCREMENT,
-name VARCHAR(50) NOT NULL,
+miniature_name VARCHAR(50) NOT NULL,
 movement TINYINT UNSIGNED NOT NULL,
 action_points TINYINT UNSIGNED NOT NULL,
 defense TINYINT UNSIGNED NOT NULL,
@@ -60,7 +60,7 @@ ON DELETE RESTRICT ON UPDATE RESTRICT
 
 CREATE TABLE Squad (
 squad_id INT PRIMARY KEY AUTO_INCREMENT,
-name VARCHAR(30) NOT NULL,
+squad_name VARCHAR(30) NOT NULL,
 faction_id INT NOT NULL,
 
 FOREIGN KEY (faction_id) 
@@ -70,8 +70,8 @@ ON DELETE RESTRICT ON UPDATE RESTRICT
 
 CREATE TABLE Player (
 player_id INT PRIMARY KEY AUTO_INCREMENT,
-name VARCHAR(30) NOT NULL,
-surname VARCHAR(30) NOT NULL,
+player_name VARCHAR(30) NOT NULL,
+player_surname VARCHAR(30) NOT NULL,
 prefered_faction_id INT NOT NULL,
 
 FOREIGN KEY (prefered_faction_id) 
@@ -124,8 +124,8 @@ ON DELETE RESTRICT ON UPDATE RESTRICT
 CREATE TABLE Game_session (
 game_session_id INT PRIMARY KEY AUTO_INCREMENT,
 rules_edition TINYINT UNSIGNED NOT NULL,
-date DATE NOT NULL,
-location VARCHAR(100) NOT NULL,
+game_session_date DATE NOT NULL,
+game_session_location VARCHAR(100) NOT NULL,
 player_1_roster_id INT NOT NULL,
 player_2_roster_id INT NOT NULL,
 game_field_id INT NOT NULL,
