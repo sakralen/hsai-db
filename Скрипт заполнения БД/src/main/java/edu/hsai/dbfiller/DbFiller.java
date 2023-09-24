@@ -42,7 +42,7 @@ public class DbFiller {
     }
 
     public static void writeOpening(String path) {
-        String preamble = "USE " + DB_NAME + LINE_SEPARATOR + LINE_SEPARATOR;
+        String preamble = "USE " + DB_NAME + ";" + LINE_SEPARATOR + LINE_SEPARATOR;
         writeToFile(preamble, path);
     }
 
