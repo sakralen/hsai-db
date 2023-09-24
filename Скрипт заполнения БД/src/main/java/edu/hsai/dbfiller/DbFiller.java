@@ -262,7 +262,7 @@ public class DbFiller {
                     .append(VALUES).append(LINE_SEPARATOR)
                     .append("(").append(DEFAULT).append(", ")
                     .append(RANDOM.nextInt(RULES_EDITION_HIGH) + 1).append(", ")
-                    .append(sessionDate).append(", ")
+                    .append(APOSTROPHE).append(sessionDate).append(APOSTROPHE).append(", ")
                     .append(APOSTROPHE)
                     .append(LOCATION_VALUES[RANDOM.nextInt(LOCATION_VALUES.length)])
                     .append(APOSTROPHE).append(", ")
