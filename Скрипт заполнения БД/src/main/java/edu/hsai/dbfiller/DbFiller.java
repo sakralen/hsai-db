@@ -44,12 +44,12 @@ public class DbFiller {
 
     public static void writeOpening(String path) {
         String preamble = "USE " + DB_NAME + ";" + LINE_SEPARATOR + LINE_SEPARATOR
-                /*+ "SET FOREIGN_KEY_CHECKS = 0;" + LINE_SEPARATOR + LINE_SEPARATOR*/;
+                + "SET FOREIGN_KEY_CHECKS = 0;" + LINE_SEPARATOR + LINE_SEPARATOR;
         writeToFile(preamble, path);
     }
 
     public static void writeClosing(String path) {
-        //writeToFile("SET FOREIGN_KEY_CHECKS = 1;" + LINE_SEPARATOR, path);
+        writeToFile("SET FOREIGN_KEY_CHECKS = 1;" + LINE_SEPARATOR, path);
     }
 
     public static void fillSmallTables(String path) {
@@ -220,177 +220,177 @@ public class DbFiller {
         /*!MINIATURE IN SQUAD*/
     }
 
-//    public static void fillLargeTables(String path) {
-//        for (int i = 0; i < /*GAME_SESSION_COUNT*/1; i++) {
-//            int player1Id = RANDOM.nextInt(PLAYERS_COUNT) + 1;
-//            int player2Id;
-//            do {
-//                player2Id = RANDOM.nextInt(PLAYERS_COUNT) + 1;
-//            } while (player1Id == player2Id);
-//
-//            int player1SquadId = RANDOM.nextInt(SQUADS_COUNT) + 1;
-//            int player2SquadId;
-//            do {
-//                player2SquadId = RANDOM.nextInt(SQUADS_COUNT) + 1;
-//            } while (player1SquadId == player2SquadId);
-//
-//            Stack<Integer> missionCardIds = new Stack<>();
-//            for (int j = 0; j < MISSION_CARDS_COUNT; j++) {
-//                missionCardIds.add(j + 1);
-//            }
-//            Collections.shuffle(missionCardIds);
-//
-//            ArrayList<Integer> player1CardIds = new ArrayList<>();
-//            ArrayList<Integer> player2CardIds = new ArrayList<>();
-//            for (int j = 0; j < ROUNDS_COUNT; j++) {
-//                player1CardIds.add(missionCardIds.pop());
-//                player2CardIds.add(missionCardIds.pop());
-//            }
-//
-//            StringBuilder playerRosterSb = new StringBuilder();
-//            playerRosterSb.append(INSERT_INTO).append(PLAYER_ROSTER_TABLE).append(LINE_SEPARATOR)
-//                    .append(VALUES).append(LINE_SEPARATOR)
-//                    .append("(").append(DEFAULT).append(", ")
-//                    .append(player1Id).append(", ").append(player1SquadId)
-//                    .append(")").append(",").append(LINE_SEPARATOR)
-//                    .append("(").append(DEFAULT).append(", ")
-//                    .append(player2Id).append(", ").append(player2SquadId)
-//                    .append(")").append(";").append(LINE_SEPARATOR);
-//            writeToFile(playerRosterSb.append(LINE_SEPARATOR).toString(), path);
-//
-//            int player1RosterId = (2 * i + 1);
-//            int player2RosterId = player1RosterId + 1;
-//            LocalDate sessionDate = LocalDate.ofEpochDay(DATE_LOW + RANDOM.nextLong(DATE_HIGH - DATE_LOW));
-//
-//            StringBuilder gameSessionSb = new StringBuilder();
-//            gameSessionSb.append(INSERT_INTO).append(GAME_SESSION_TABLE).append(LINE_SEPARATOR)
-//                    .append(VALUES).append(LINE_SEPARATOR)
-//                    .append("(").append(DEFAULT).append(", ")
-//                    .append(RANDOM.nextInt(RULES_EDITION_HIGH) + 1).append(", ")
-//                    .append(APOSTROPHE).append(sessionDate).append(APOSTROPHE).append(", ")
-//                    .append(APOSTROPHE)
-//                    .append(LOCATION_VALUES[RANDOM.nextInt(LOCATION_VALUES.length)])
-//                    .append(APOSTROPHE).append(", ")
-//                    .append(player1RosterId).append(", ")
-//                    .append(player2RosterId).append(", ")
-//                    .append(RANDOM.nextInt(GAME_FIELDS_COUNT) + 1)
-//                    .append(")").append(";").append(LINE_SEPARATOR);
-//            writeToFile(gameSessionSb.append(LINE_SEPARATOR).toString(), path);
-//
-//            int sessionId = i + 1;
-//            StringBuilder sessionRoundsSb = new StringBuilder();
-//            sessionRoundsSb.append(INSERT_INTO).append(SESSION_ROUNDS_TABLE).append(LINE_SEPARATOR)
-//                    .append(VALUES).append(LINE_SEPARATOR);
-//            for (int j = 0; j < ROUNDS_COUNT; j++) {
-//                sessionRoundsSb.append("(").append(DEFAULT).append(", ")
-//                        .append(sessionId).append(", ")
-//                        .append(player1Id).append(", ")
-//                        .append(j + 1).append(", ")
-//                        .append(player1CardIds.get(j)).append(", ")
-//                        .append(RANDOM.nextInt(ROUND_POINTS_HIGH))
-//                        .append(")").append(",").append(LINE_SEPARATOR)
-//                        .append("(").append(DEFAULT).append(", ")
-//                        .append(sessionId).append(", ")
-//                        .append(player2Id).append(", ")
-//                        .append(j + 1).append(", ")
-//                        .append(player2CardIds.get(j)).append(", ")
-//                        .append(RANDOM.nextInt(ROUND_POINTS_HIGH))
-//                        .append(")")
-//                        .append((j != (ROUNDS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
-//            }
-//            writeToFile(sessionRoundsSb.append(LINE_SEPARATOR).toString(), path);
-//        }
-//    }
+   public static void fillLargeTables(String path) {
+       for (int i = 0; i < GAME_SESSION_COUNT; i++) {
+           int player1Id = RANDOM.nextInt(PLAYERS_COUNT) + 1;
+           int player2Id;
+           do {
+               player2Id = RANDOM.nextInt(PLAYERS_COUNT) + 1;
+           } while (player1Id == player2Id);
 
-    public static void fillLargeTables(String path) {
-        int[][] playerIds = new int[GAME_SESSION_COUNT][2];
-        for (int i = 0; i < GAME_SESSION_COUNT; i++) {
-            playerIds[i][0] = RANDOM.nextInt(PLAYERS_COUNT) + 1;
-            do {
-                playerIds[i][1] = RANDOM.nextInt(PLAYERS_COUNT) + 1;
-            } while (playerIds[i][0] == playerIds[i][1]);
-        }
+           int player1SquadId = RANDOM.nextInt(SQUADS_COUNT) + 1;
+           int player2SquadId;
+           do {
+               player2SquadId = RANDOM.nextInt(SQUADS_COUNT) + 1;
+           } while (player1SquadId == player2SquadId);
 
-        StringBuilder playerRosterSb = new StringBuilder();
-        playerRosterSb.append(INSERT_INTO).append(PLAYER_ROSTER_TABLE).append(LINE_SEPARATOR)
-                .append(VALUES).append(LINE_SEPARATOR);
-        for (int i = 0; i < GAME_SESSION_COUNT; i++) {
-            int player1SquadId = RANDOM.nextInt(SQUADS_COUNT) + 1;
-            int player2SquadId;
-            do {
-                player2SquadId = RANDOM.nextInt(SQUADS_COUNT) + 1;
-            } while (player1SquadId == player2SquadId);
+           Stack<Integer> missionCardIds = new Stack<>();
+           for (int j = 0; j < MISSION_CARDS_COUNT; j++) {
+               missionCardIds.add(j + 1);
+           }
+           Collections.shuffle(missionCardIds);
 
-            playerRosterSb.append("(").append(DEFAULT).append(", ")
-                    .append(playerIds[i][0]).append(", ").append(player1SquadId)
-                    .append(")").append(",").append(LINE_SEPARATOR)
-                    .append("(").append(DEFAULT).append(", ")
-                    .append(playerIds[i][1]).append(", ").append(player2SquadId)
-                    .append(")")
-                    .append((i != (GAME_SESSION_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
-        }
-        writeToFile(playerRosterSb.append(LINE_SEPARATOR).toString(), path);
+           ArrayList<Integer> player1CardIds = new ArrayList<>();
+           ArrayList<Integer> player2CardIds = new ArrayList<>();
+           for (int j = 0; j < ROUNDS_COUNT; j++) {
+               player1CardIds.add(missionCardIds.pop());
+               player2CardIds.add(missionCardIds.pop());
+           }
 
-        StringBuilder gameSessionSb = new StringBuilder();
-        gameSessionSb.append(INSERT_INTO).append(GAME_SESSION_TABLE).append(LINE_SEPARATOR)
-                .append(VALUES).append(LINE_SEPARATOR);
-        for (int i = 0; i < GAME_SESSION_COUNT; i++) {
-            LocalDate sessionDate = LocalDate.ofEpochDay(DATE_LOW + RANDOM.nextLong(DATE_HIGH - DATE_LOW));
-            int player1RosterId = 2 * i + 1;
-            int player2RosterId = player1RosterId + 1;
+           StringBuilder playerRosterSb = new StringBuilder();
+           playerRosterSb.append(INSERT_INTO).append(PLAYER_ROSTER_TABLE).append(LINE_SEPARATOR)
+                   .append(VALUES).append(LINE_SEPARATOR)
+                   .append("(").append(DEFAULT).append(", ")
+                   .append(player1Id).append(", ").append(player1SquadId)
+                   .append(")").append(",").append(LINE_SEPARATOR)
+                   .append("(").append(DEFAULT).append(", ")
+                   .append(player2Id).append(", ").append(player2SquadId)
+                   .append(")").append(";").append(LINE_SEPARATOR);
+           writeToFile(playerRosterSb.append(LINE_SEPARATOR).toString(), path);
 
-            gameSessionSb.append("(").append(DEFAULT).append(", ")
-                    .append(RANDOM.nextInt(RULES_EDITION_HIGH) + 1).append(", ")
-                    .append(APOSTROPHE).append(sessionDate).append(APOSTROPHE).append(", ")
-                    .append(APOSTROPHE)
-                    .append(LOCATION_VALUES[RANDOM.nextInt(LOCATION_VALUES.length)])
-                    .append(APOSTROPHE).append(", ")
-                    .append(player1RosterId).append(", ")
-                    .append(player2RosterId).append(", ")
-                    .append(RANDOM.nextInt(GAME_FIELDS_COUNT) + 1)
-                    .append(")")
-                    .append((i != (GAME_SESSION_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
-        }
-        writeToFile(gameSessionSb.append(LINE_SEPARATOR).toString(), path);
+           int player1RosterId = (2 * i + 1);
+           int player2RosterId = player1RosterId + 1;
+           LocalDate sessionDate = LocalDate.ofEpochDay(DATE_LOW + RANDOM.nextLong(DATE_HIGH - DATE_LOW));
 
-        StringBuilder sessionRoundsSb = new StringBuilder();
-        sessionRoundsSb.append(INSERT_INTO).append(SESSION_ROUNDS_TABLE).append(LINE_SEPARATOR)
-                .append(VALUES).append(LINE_SEPARATOR);
-        for (int i = 0; i < GAME_SESSION_COUNT; i++) {
-            int sessionId = i + 1;
+           StringBuilder gameSessionSb = new StringBuilder();
+           gameSessionSb.append(INSERT_INTO).append(GAME_SESSION_TABLE).append(LINE_SEPARATOR)
+                   .append(VALUES).append(LINE_SEPARATOR)
+                   .append("(").append(DEFAULT).append(", ")
+                   .append(RANDOM.nextInt(RULES_EDITION_HIGH) + 1).append(", ")
+                   .append(APOSTROPHE).append(sessionDate).append(APOSTROPHE).append(", ")
+                   .append(APOSTROPHE)
+                   .append(LOCATION_VALUES[RANDOM.nextInt(LOCATION_VALUES.length)])
+                   .append(APOSTROPHE).append(", ")
+                   .append(player1RosterId).append(", ")
+                   .append(player2RosterId).append(", ")
+                   .append(RANDOM.nextInt(GAME_FIELDS_COUNT) + 1)
+                   .append(")").append(";").append(LINE_SEPARATOR);
+           writeToFile(gameSessionSb.append(LINE_SEPARATOR).toString(), path);
 
-            Stack<Integer> missionCardIds = new Stack<>();
-            for (int j = 0; j < MISSION_CARDS_COUNT; j++) {
-                missionCardIds.add(j + 1);
-            }
-            Collections.shuffle(missionCardIds);
+           int sessionId = i + 1;
+           StringBuilder sessionRoundsSb = new StringBuilder();
+           sessionRoundsSb.append(INSERT_INTO).append(SESSION_ROUNDS_TABLE).append(LINE_SEPARATOR)
+                   .append(VALUES).append(LINE_SEPARATOR);
+           for (int j = 0; j < ROUNDS_COUNT; j++) {
+               sessionRoundsSb.append("(").append(DEFAULT).append(", ")
+                       .append(sessionId).append(", ")
+                       .append(player1Id).append(", ")
+                       .append(j + 1).append(", ")
+                       .append(player1CardIds.get(j)).append(", ")
+                       .append(RANDOM.nextInt(ROUND_POINTS_HIGH))
+                       .append(")").append(",").append(LINE_SEPARATOR)
+                       .append("(").append(DEFAULT).append(", ")
+                       .append(sessionId).append(", ")
+                       .append(player2Id).append(", ")
+                       .append(j + 1).append(", ")
+                       .append(player2CardIds.get(j)).append(", ")
+                       .append(RANDOM.nextInt(ROUND_POINTS_HIGH))
+                       .append(")")
+                       .append((j != (ROUNDS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+           }
+           writeToFile(sessionRoundsSb.append(LINE_SEPARATOR).toString(), path);
+       }
+   }
 
-            ArrayList<Integer> player1CardIds = new ArrayList<>();
-            ArrayList<Integer> player2CardIds = new ArrayList<>();
-            for (int j = 0; j < ROUNDS_COUNT; j++) {
-                player1CardIds.add(missionCardIds.pop());
-                player2CardIds.add(missionCardIds.pop());
-            }
+    // public static void fillLargeTables(String path) {
+    //     int[][] playerIds = new int[GAME_SESSION_COUNT][2];
+    //     for (int i = 0; i < GAME_SESSION_COUNT; i++) {
+    //         playerIds[i][0] = RANDOM.nextInt(PLAYERS_COUNT) + 1;
+    //         do {
+    //             playerIds[i][1] = RANDOM.nextInt(PLAYERS_COUNT) + 1;
+    //         } while (playerIds[i][0] == playerIds[i][1]);
+    //     }
 
-            for (int j = 0; j < ROUNDS_COUNT; j++) {
-                sessionRoundsSb.append("(").append(DEFAULT).append(", ")
-                        .append(sessionId).append(", ")
-                        .append(playerIds[i][0]).append(", ")
-                        .append(j + 1).append(", ")
-                        .append(player1CardIds.get(j)).append(", ")
-                        .append(RANDOM.nextInt(ROUND_POINTS_HIGH))
-                        .append(")").append(",").append(LINE_SEPARATOR)
-                        .append("(").append(DEFAULT).append(", ")
-                        .append(sessionId).append(", ")
-                        .append(playerIds[i][1]).append(", ")
-                        .append(j + 1).append(", ")
-                        .append(player2CardIds.get(j)).append(", ")
-                        .append(RANDOM.nextInt(ROUND_POINTS_HIGH))
-                        .append(")")
-                        .append(((i * j) != ((GAME_SESSION_COUNT - 1) * (ROUNDS_COUNT - 1))) ? "," : ";")
-                        .append(LINE_SEPARATOR);
-            }
-        }
-        writeToFile(sessionRoundsSb.append(LINE_SEPARATOR).toString(), path);
-    }
+    //     StringBuilder playerRosterSb = new StringBuilder();
+    //     playerRosterSb.append(INSERT_INTO).append(PLAYER_ROSTER_TABLE).append(LINE_SEPARATOR)
+    //             .append(VALUES).append(LINE_SEPARATOR);
+    //     for (int i = 0; i < GAME_SESSION_COUNT; i++) {
+    //         int player1SquadId = RANDOM.nextInt(SQUADS_COUNT) + 1;
+    //         int player2SquadId;
+    //         do {
+    //             player2SquadId = RANDOM.nextInt(SQUADS_COUNT) + 1;
+    //         } while (player1SquadId == player2SquadId);
+
+    //         playerRosterSb.append("(").append(DEFAULT).append(", ")
+    //                 .append(playerIds[i][0]).append(", ").append(player1SquadId)
+    //                 .append(")").append(",").append(LINE_SEPARATOR)
+    //                 .append("(").append(DEFAULT).append(", ")
+    //                 .append(playerIds[i][1]).append(", ").append(player2SquadId)
+    //                 .append(")")
+    //                 .append((i != (GAME_SESSION_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+    //     }
+    //     writeToFile(playerRosterSb.append(LINE_SEPARATOR).toString(), path);
+
+    //     StringBuilder gameSessionSb = new StringBuilder();
+    //     gameSessionSb.append(INSERT_INTO).append(GAME_SESSION_TABLE).append(LINE_SEPARATOR)
+    //             .append(VALUES).append(LINE_SEPARATOR);
+    //     for (int i = 0; i < GAME_SESSION_COUNT; i++) {
+    //         LocalDate sessionDate = LocalDate.ofEpochDay(DATE_LOW + RANDOM.nextLong(DATE_HIGH - DATE_LOW));
+    //         int player1RosterId = 2 * i + 1;
+    //         int player2RosterId = player1RosterId + 1;
+
+    //         gameSessionSb.append("(").append(DEFAULT).append(", ")
+    //                 .append(RANDOM.nextInt(RULES_EDITION_HIGH) + 1).append(", ")
+    //                 .append(APOSTROPHE).append(sessionDate).append(APOSTROPHE).append(", ")
+    //                 .append(APOSTROPHE)
+    //                 .append(LOCATION_VALUES[RANDOM.nextInt(LOCATION_VALUES.length)])
+    //                 .append(APOSTROPHE).append(", ")
+    //                 .append(player1RosterId).append(", ")
+    //                 .append(player2RosterId).append(", ")
+    //                 .append(RANDOM.nextInt(GAME_FIELDS_COUNT) + 1)
+    //                 .append(")")
+    //                 .append((i != (GAME_SESSION_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+    //     }
+    //     writeToFile(gameSessionSb.append(LINE_SEPARATOR).toString(), path);
+
+    //     StringBuilder sessionRoundsSb = new StringBuilder();
+    //     sessionRoundsSb.append(INSERT_INTO).append(SESSION_ROUNDS_TABLE).append(LINE_SEPARATOR)
+    //             .append(VALUES).append(LINE_SEPARATOR);
+    //     for (int i = 0; i < GAME_SESSION_COUNT; i++) {
+    //         int sessionId = i + 1;
+
+    //         Stack<Integer> missionCardIds = new Stack<>();
+    //         for (int j = 0; j < MISSION_CARDS_COUNT; j++) {
+    //             missionCardIds.add(j + 1);
+    //         }
+    //         Collections.shuffle(missionCardIds);
+
+    //         ArrayList<Integer> player1CardIds = new ArrayList<>();
+    //         ArrayList<Integer> player2CardIds = new ArrayList<>();
+    //         for (int j = 0; j < ROUNDS_COUNT; j++) {
+    //             player1CardIds.add(missionCardIds.pop());
+    //             player2CardIds.add(missionCardIds.pop());
+    //         }
+
+    //         for (int j = 0; j < ROUNDS_COUNT; j++) {
+    //             sessionRoundsSb.append("(").append(DEFAULT).append(", ")
+    //                     .append(sessionId).append(", ")
+    //                     .append(playerIds[i][0]).append(", ")
+    //                     .append(j + 1).append(", ")
+    //                     .append(player1CardIds.get(j)).append(", ")
+    //                     .append(RANDOM.nextInt(ROUND_POINTS_HIGH))
+    //                     .append(")").append(",").append(LINE_SEPARATOR)
+    //                     .append("(").append(DEFAULT).append(", ")
+    //                     .append(sessionId).append(", ")
+    //                     .append(playerIds[i][1]).append(", ")
+    //                     .append(j + 1).append(", ")
+    //                     .append(player2CardIds.get(j)).append(", ")
+    //                     .append(RANDOM.nextInt(ROUND_POINTS_HIGH))
+    //                     .append(")")
+    //                     .append(((i * j) != ((GAME_SESSION_COUNT - 1) * (ROUNDS_COUNT - 1))) ? "," : ";")
+    //                     .append(LINE_SEPARATOR);
+    //         }
+    //     }
+    //     writeToFile(sessionRoundsSb.append(LINE_SEPARATOR).toString(), path);
+    // }
 }
