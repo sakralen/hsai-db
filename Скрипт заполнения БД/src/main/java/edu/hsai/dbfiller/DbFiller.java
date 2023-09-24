@@ -183,11 +183,13 @@ public class DbFiller {
         StringBuilder fieldTerrainInsertSb = new StringBuilder();
         fieldTerrainInsertSb.append(INSERT_INTO).append(FIELD_TERRAIN_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
-        for (int i = 0; i < FIELD_TERRAIN_COUNT; i++) {
-            fieldTerrainInsertSb.append("(").append(DEFAULT).append(", ")
-                    .append(RANDOM.nextInt(GAME_FIELDS_COUNT) + 1).append(", ")
-                    .append(RANDOM.nextInt(TERRAIN_PIECES_COUNT) + 1)
-                    .append(")").append((i != (FIELD_TERRAIN_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+        for (int i = 0; i < GAME_FIELDS_COUNT; i++) {
+            for (int j = 0; j < FIELD_TERRAIN_MULTIPLIER; j++) {
+                fieldTerrainInsertSb.append("(").append(DEFAULT).append(", ")
+                        .append(i + 1).append(", ")
+                        .append(RANDOM.nextInt(TERRAIN_PIECES_COUNT) + 1)
+                        .append(")").append((i != (FIELD_TERRAIN_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+            }
         }
         writeToFile(fieldTerrainInsertSb.append(LINE_SEPARATOR).toString(), path);
         /*!FIELD TERRAIN*/
@@ -196,11 +198,13 @@ public class DbFiller {
         StringBuilder miniInSquadInsertSb = new StringBuilder();
         miniInSquadInsertSb.append(INSERT_INTO).append(MINIATURE_IN_SQUAD_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
-        for (int i = 0; i < MINIATURE_IN_SQUAD_COUNT; i++) {
-            miniInSquadInsertSb.append("(").append(DEFAULT).append(", ")
-                    .append(RANDOM.nextInt(SQUADS_COUNT) + 1).append(", ")
-                    .append(RANDOM.nextInt(MINIATURES_COUNT) + 1)
-                    .append(")").append((i != (MINIATURE_IN_SQUAD_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+        for (int i = 0; i < SQUADS_COUNT; i++) {
+            for (int j = 0; j < MINIATURE_IN_SQUAD_MULTIPLIER; j++) {
+                miniInSquadInsertSb.append("(").append(DEFAULT).append(", ")
+                        .append(i + 1).append(", ")
+                        .append(RANDOM.nextInt(MINIATURES_COUNT) + 1)
+                        .append(")").append((i != (MINIATURE_IN_SQUAD_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+            }
         }
         writeToFile(miniInSquadInsertSb.append(LINE_SEPARATOR).toString(), path);
         /*!MINIATURE IN SQUAD*/

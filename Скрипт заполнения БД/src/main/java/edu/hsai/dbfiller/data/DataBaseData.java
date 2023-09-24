@@ -45,8 +45,10 @@ public class DataBaseData {
     public static final int PLAYERS_COUNT = 1000;
 
     /*PRIORITY 3*/
-    public static final int FIELD_TERRAIN_COUNT = 10;
-    public static final int MINIATURE_IN_SQUAD_COUNT = 10;
+    public static final int FIELD_TERRAIN_MULTIPLIER = 10;
+    public static final int FIELD_TERRAIN_COUNT;
+    public static final int MINIATURE_IN_SQUAD_MULTIPLIER = 10;
+    public static final int MINIATURE_IN_SQUAD_COUNT;
     public static final int PLAYER_ROSTERS_COUNT;
 
     /*PRIORITY 4*/
@@ -68,5 +70,7 @@ public class DataBaseData {
         PLAYER_ROSTERS_COUNT = GAME_SESSION_COUNT * KillTeamData.PLAYERS_IN_SESSION_COUNT;
         SESSION_ROUNDS_COUNT = GAME_SESSION_COUNT * KillTeamData.ROUNDS_IN_SESSION_COUNT
                 * KillTeamData.PLAYERS_IN_SESSION_COUNT;
+        FIELD_TERRAIN_COUNT = GAME_FIELDS_COUNT * FIELD_TERRAIN_MULTIPLIER;
+        MINIATURE_IN_SQUAD_COUNT = MINIATURES_COUNT * MINIATURE_IN_SQUAD_MULTIPLIER;
     }
 }
