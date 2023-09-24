@@ -4,13 +4,24 @@ import static edu.hsai.dbfiller.DbFiller.*;
 
 public class App {
     public static void main(String[] args) {
-        switch (args[0]) {
-            case "-i" -> printDictionariesCount(); // print info
-            case "-s" -> fillSmallTables(args[1]); // fill small tables
-            case "-l" -> fillLargeTables(args[1]); // fill large tables
+        String parameter = args[0];
+        String path = args.length == 2 ? args[1] : null;
+        switch (parameter) {
+            case "-i" -> {  // print info
+                printDictionariesCount();
+            }
+            case "-s" -> {  // fill small tables
+                writeOpening(path);
+                fillSmallTables(path);
+            }
+            case "-l" -> {  // fill large tables
+                writeOpening(path);
+                fillLargeTables(path);
+            }
             case "-a" -> { // fill all tables
-                fillSmallTables(args[1]);
-                fillLargeTables(args[1]);
+                writeOpening(path);
+                fillSmallTables(path);
+                fillLargeTables(path);
             }
         }
     }

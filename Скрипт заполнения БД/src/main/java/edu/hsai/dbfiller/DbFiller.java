@@ -13,6 +13,7 @@ public class DbFiller {
     private static final String VALUES = "VALUES ";
     private static final String LINE_SEPARATOR = System.lineSeparator();
     private static final String APOSTROPHE = "'";
+    private static final String DEFAULT = "DEFAULT";
     private static final Random RANDOM = new Random();
 
     public static void printDictionariesCount() {
@@ -52,7 +53,7 @@ public class DbFiller {
         manufacturersInsertSb.append(INSERT_INTO).append(MANUFACTURER_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < MANUFACTURERS_COUNT; i++) {
-            manufacturersInsertSb.append("(")
+            manufacturersInsertSb.append("(").append(DEFAULT).append(", ")
                     .append(APOSTROPHE).append(MANUFACTURERS_VALUES[i]).append(APOSTROPHE)
                     .append(")").append((i != (MANUFACTURERS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
@@ -64,7 +65,7 @@ public class DbFiller {
         factionsInsertSb.append(INSERT_INTO).append(FACTION_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < FACTIONS_COUNT; i++) {
-            factionsInsertSb.append("(")
+            factionsInsertSb.append("(").append(DEFAULT).append(", ")
                     .append(APOSTROPHE).append(FACTION_VALUES[i]).append(APOSTROPHE)
                     .append(")").append((i != (FACTIONS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
@@ -76,7 +77,7 @@ public class DbFiller {
         fieldsInsertSb.append(INSERT_INTO).append(GAME_FIELD_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < GAME_FIELDS_COUNT; i++) {
-            fieldsInsertSb.append("(")
+            fieldsInsertSb.append("(").append(DEFAULT).append(", ")
                     .append(APOSTROPHE).append(GAME_FIELDS_TYPES_VALUES[i]).append(APOSTROPHE)
                     .append(")").append((i != (GAME_FIELDS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
@@ -88,8 +89,8 @@ public class DbFiller {
         roundsInsertSb.append(INSERT_INTO).append(ROUND_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < ROUNDS_COUNT; i++) {
-            roundsInsertSb.append("(")
-                    .append(APOSTROPHE).append(ROUNDS_VALUES[i]).append(APOSTROPHE)
+            roundsInsertSb.append("(").append(DEFAULT).append(", ")
+                    .append(ROUNDS_VALUES[i])
                     .append(")").append((i != (ROUNDS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
         }
         writeToFile(roundsInsertSb.append(LINE_SEPARATOR).toString(), path);
@@ -100,7 +101,7 @@ public class DbFiller {
         missionCardsInsertSb.append(INSERT_INTO).append(MISSION_CARD_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < MISSION_CARDS_COUNT; i++) {
-            missionCardsInsertSb.append("(")
+            missionCardsInsertSb.append("(").append(DEFAULT).append(", ")
                     .append(APOSTROPHE).append(MISSION_CARDS_VALUES[i][0]).append(APOSTROPHE).append(", ")
                     .append(APOSTROPHE).append(MISSION_CARDS_VALUES[i][1]).append(APOSTROPHE).append(", ")
                     .append(MISSION_CARDS_VALUES[i][2])
@@ -115,7 +116,7 @@ public class DbFiller {
         terrainPiecesInsertSb.append(INSERT_INTO).append(TERRAIN_PIECE_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < TERRAIN_PIECES_COUNT; i++) {
-            terrainPiecesInsertSb.append("(")
+            terrainPiecesInsertSb.append("(").append(DEFAULT).append(", ")
                     .append(APOSTROPHE).append(TERRAIN_PIECES_VALUES[i][0]).append(APOSTROPHE).append(", ")
                     .append(APOSTROPHE).append(TERRAIN_PIECES_VALUES[i][1]).append(APOSTROPHE).append(", ")
                     .append(TERRAIN_PIECES_VALUES[i][2]).append(", ")
@@ -130,7 +131,7 @@ public class DbFiller {
         miniaturesInsertSb.append(INSERT_INTO).append(MINIATURE_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < MINIATURES_COUNT; i++) {
-            miniaturesInsertSb.append("(")
+            miniaturesInsertSb.append("(").append(DEFAULT).append(", ")
                     .append(APOSTROPHE).append(MINIATURES_VALUES[i][0]).append(APOSTROPHE).append(", ")
                     .append(Stream.of(MINIATURES_VALUES[i]).skip(1).limit(5)
                             .collect(Collectors.joining(", "))).append(", ")
@@ -145,7 +146,7 @@ public class DbFiller {
         squadsInsertSb.append(INSERT_INTO).append(SQUAD_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < SQUADS_COUNT; i++) {
-            squadsInsertSb.append("(")
+            squadsInsertSb.append("(").append(DEFAULT).append(", ")
                     .append(APOSTROPHE).append(SQUAD_VALUES[i]).append(APOSTROPHE).append(", ")
                     .append(RANDOM.nextInt(FACTIONS_COUNT) + 1)
                     .append(")").append((i != (SQUADS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
@@ -168,7 +169,7 @@ public class DbFiller {
                 surname = FEMALE_SURNAMES[RANDOM.nextInt(FEMALE_SURNAMES.length)];
             }
 
-            playersInsertSb.append("(")
+            playersInsertSb.append("(").append(DEFAULT).append(", ")
                     .append(APOSTROPHE).append(name).append(APOSTROPHE).append(", ")
                     .append(APOSTROPHE).append(surname).append(APOSTROPHE).append(", ")
                     .append(RANDOM.nextInt(FACTIONS_COUNT) + 1)
@@ -183,7 +184,7 @@ public class DbFiller {
         fieldTerrainInsertSb.append(INSERT_INTO).append(FIELD_TERRAIN_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < FIELD_TERRAIN_COUNT; i++) {
-            fieldTerrainInsertSb.append("(")
+            fieldTerrainInsertSb.append("(").append(DEFAULT).append(", ")
                     .append(RANDOM.nextInt(GAME_FIELDS_COUNT) + 1).append(", ")
                     .append(RANDOM.nextInt(TERRAIN_PIECES_COUNT) + 1)
                     .append(")").append((i != (FIELD_TERRAIN_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
@@ -196,7 +197,7 @@ public class DbFiller {
         miniInSquadInsertSb.append(INSERT_INTO).append(MINIATURE_IN_SQUAD_TABLE).append(LINE_SEPARATOR)
                 .append(VALUES).append(LINE_SEPARATOR);
         for (int i = 0; i < MINIATURE_IN_SQUAD_COUNT; i++) {
-            miniInSquadInsertSb.append("(")
+            miniInSquadInsertSb.append("(").append(DEFAULT).append(", ")
                     .append(RANDOM.nextInt(SQUADS_COUNT) + 1).append(", ")
                     .append(RANDOM.nextInt(MINIATURES_COUNT) + 1)
                     .append(")").append((i != (MINIATURE_IN_SQUAD_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
