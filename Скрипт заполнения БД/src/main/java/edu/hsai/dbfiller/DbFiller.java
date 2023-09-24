@@ -1,6 +1,7 @@
 package edu.hsai.dbfiller;
 
-import java.util.Random;
+import java.time.LocalDate;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -215,16 +216,84 @@ public class DbFiller {
     }
 
     public static void fillLargeTables(String path) {
-        /*PRIORITY 3*/
-        /*PLAYER ROSTER*/
-        /*!PLAYER ROSTER*/
+        for (int i = 0; i < GAME_SESSION_COUNT; i++) {
+            int player1Id = RANDOM.nextInt(PLAYERS_COUNT) + 1;
+            int player2Id;
+            do {
+                player2Id = RANDOM.nextInt(PLAYERS_COUNT) + 1;
+            } while (player1Id == player2Id);
 
-        /*PRIORITY 4*/
-        /*GAME SESSIONS*/
-        /*!GAME SESSIONS*/
+            int player1SquadId = RANDOM.nextInt(SQUADS_COUNT) + 1;
+            int player2SquadId;
+            do {
+                player2SquadId = RANDOM.nextInt(SQUADS_COUNT) + 1;
+            } while (player1SquadId == player2SquadId);
 
-        /*PRIORITY 5*/
-        /*SESSION ROUNDS*/
-        /*!SESSION ROUNDS*/
+            Stack<Integer> missionCardIds = new Stack<>();
+            for (int j = 0; j < MISSION_CARDS_COUNT; j++) {
+                missionCardIds.add(j + 1);
+            }
+            Collections.shuffle(missionCardIds);
+
+            ArrayList<Integer> player1CardIds = new ArrayList<>();
+            ArrayList<Integer> player2CardIds = new ArrayList<>();
+            for (int j = 0; j < ROUNDS_COUNT; j++) {
+                player1CardIds.add(missionCardIds.pop());
+                player2CardIds.add(missionCardIds.pop());
+            }
+
+            StringBuilder playerRosterSb = new StringBuilder();
+            playerRosterSb.append(INSERT_INTO).append(PLAYER_ROSTER_TABLE).append(LINE_SEPARATOR)
+                    .append(VALUES).append(LINE_SEPARATOR)
+                    .append("(").append(DEFAULT).append(", ")
+                    .append(player1Id).append(", ").append(player1SquadId)
+                    .append(")").append(",").append(LINE_SEPARATOR)
+                    .append("(").append(DEFAULT).append(", ")
+                    .append(player2Id).append(", ").append(player2SquadId)
+                    .append(")").append(";").append(LINE_SEPARATOR);
+            writeToFile(playerRosterSb.append(LINE_SEPARATOR).toString(), path);
+
+            int player1RosterId = (2 * i + 1);
+            int player2RosterId = player1RosterId + 1;
+            LocalDate sessionDate = LocalDate.ofEpochDay(DATE_LOW + RANDOM.nextLong(DATE_HIGH - DATE_LOW));
+
+            StringBuilder gameSessionSb = new StringBuilder();
+            gameSessionSb.append(INSERT_INTO).append(GAME_SESSION_TABLE).append(LINE_SEPARATOR)
+                    .append(VALUES).append(LINE_SEPARATOR)
+                    .append("(").append(DEFAULT).append(", ")
+                    .append(RANDOM.nextInt(RULES_EDITION_HIGH) + 1).append(", ")
+                    .append(sessionDate).append(", ")
+                    .append(APOSTROPHE)
+                    .append(LOCATION_VALUES[RANDOM.nextInt(LOCATION_VALUES.length)])
+                    .append(APOSTROPHE).append(", ")
+                    .append(player1RosterId).append(", ")
+                    .append(player2RosterId).append(", ")
+                    .append(RANDOM.nextInt(GAME_FIELDS_COUNT) + 1)
+                    .append(")").append(";").append(LINE_SEPARATOR);
+            writeToFile(gameSessionSb.append(LINE_SEPARATOR).toString(), path);
+
+            int sessionId = i + 1;
+            StringBuilder sessionRoundsSb = new StringBuilder();
+            sessionRoundsSb.append(INSERT_INTO).append(SESSION_ROUNDS_TABLE).append(LINE_SEPARATOR)
+                    .append(VALUES).append(LINE_SEPARATOR);
+            for (int j = 0; j < ROUNDS_COUNT; j++) {
+                sessionRoundsSb.append("(").append(DEFAULT).append(", ")
+                        .append(sessionId).append(", ")
+                        .append(player1Id).append(", ")
+                        .append(j + 1).append(", ")
+                        .append(player1CardIds.get(j)).append(", ")
+                        .append(RANDOM.nextInt(ROUND_POINTS_HIGH))
+                        .append(")").append(",").append(LINE_SEPARATOR)
+                        .append("(").append(DEFAULT).append(", ")
+                        .append(sessionId).append(", ")
+                        .append(player2Id).append(", ")
+                        .append(j + 1).append(", ")
+                        .append(player2CardIds.get(j)).append(", ")
+                        .append(RANDOM.nextInt(ROUND_POINTS_HIGH))
+                        .append(")")
+                        .append((j != (ROUNDS_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+            }
+            writeToFile(sessionRoundsSb.append(LINE_SEPARATOR).toString(), path);
+        }
     }
 }

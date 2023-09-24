@@ -1,15 +1,19 @@
 package edu.hsai.dbfiller.data;
 
+import java.time.LocalDate;
+
 public class KillTeamData {
     /*GENERAL DATA*/
     public static final int ROUNDS_IN_SESSION_COUNT = 4;
     public static final int PLAYERS_IN_SESSION_COUNT = 2;
+    public static final long DATE_LOW = LocalDate.of(2020, 1, 1).toEpochDay();
+    public static final long DATE_HIGH = LocalDate.of(2023, 1, 1).toEpochDay();
     /*!GENERAL DATA*/
 
     /*ROUNDS*/
     public static final int[] ROUNDS_VALUES = {1, 2, 3, 4};
     public static final int ROUND_POINT_LOW = 0;
-    public static final int ROUND_POINTS_HIGH = 10;
+    public static final int ROUND_POINTS_HIGH = 11;
     /*!ROUNDS*/
 
     /*MISSION CARDS*/
@@ -281,4 +285,9 @@ public class KillTeamData {
         "Гусева", "Киселева", "Ильина", "Максимова"
     };
     /*!NAMES*/
+
+    /*RULES EDITION*/
+    public static final int RULES_EDITION_LOW = 1;
+    public static final int RULES_EDITION_HIGH = 10;
+    /*!RULES EDITION*/
 }
