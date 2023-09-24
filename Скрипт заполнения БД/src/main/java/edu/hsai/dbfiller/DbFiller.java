@@ -188,7 +188,9 @@ public class DbFiller {
                 fieldTerrainInsertSb.append("(").append(DEFAULT).append(", ")
                         .append(i + 1).append(", ")
                         .append(RANDOM.nextInt(TERRAIN_PIECES_COUNT) + 1)
-                        .append(")").append((i != (FIELD_TERRAIN_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+                        .append(")")
+                        .append(((i * j) != ((GAME_FIELDS_COUNT - 1) * (FIELD_TERRAIN_MULTIPLIER - 1))) ? "," : ";")
+                        .append(LINE_SEPARATOR);
             }
         }
         writeToFile(fieldTerrainInsertSb.append(LINE_SEPARATOR).toString(), path);
@@ -203,7 +205,9 @@ public class DbFiller {
                 miniInSquadInsertSb.append("(").append(DEFAULT).append(", ")
                         .append(i + 1).append(", ")
                         .append(RANDOM.nextInt(MINIATURES_COUNT) + 1)
-                        .append(")").append((i != (MINIATURE_IN_SQUAD_COUNT - 1)) ? "," : ";").append(LINE_SEPARATOR);
+                        .append(")")
+                        .append(((i * j) != ((SQUADS_COUNT - 1) * (MINIATURE_IN_SQUAD_MULTIPLIER - 1))) ? "," : ";")
+                        .append(LINE_SEPARATOR);
             }
         }
         writeToFile(miniInSquadInsertSb.append(LINE_SEPARATOR).toString(), path);
