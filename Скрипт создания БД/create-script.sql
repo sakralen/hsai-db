@@ -131,11 +131,11 @@ player_2_roster_id INT NOT NULL,
 game_field_id INT NOT NULL,
 
 FOREIGN KEY (player_1_roster_id) 
-REFERENCES Player_roster (player_id) 
+REFERENCES Player_roster (player_roster_id) 
 ON DELETE RESTRICT ON UPDATE RESTRICT,
 
 FOREIGN KEY (player_2_roster_id) 
-REFERENCES Player_roster (player_id) 
+REFERENCES Player_roster (player_roster_id) 
 ON DELETE RESTRICT ON UPDATE RESTRICT,
 
 FOREIGN KEY (game_field_id) 
