@@ -1,0 +1,10 @@
++----+-------------+----------------+------------+--------+-----------------------------------------------+-----------+---------+------------------------------------------------+-------+----------+-----------------------+
+| id | select_type | table          | partitions | type   | possible_keys                                 | key       | key_len | ref                                            | rows  | filtered | Extra                 |
++----+-------------+----------------+------------+--------+-----------------------------------------------+-----------+---------+------------------------------------------------+-------+----------+-----------------------+
+|  1 | SIMPLE      | session_rounds | NULL       | ALL    | game_session_id,player_id                     | NULL      | NULL    | NULL                                           | 80256 |   100.00 | Using temporary       |
+|  1 | SIMPLE      | game_session   | NULL       | eq_ref | PRIMARY,player_1_roster_id,player_2_roster_id | PRIMARY   | 4       | kill_team_db_v1.session_rounds.game_session_id |     1 |   100.00 | NULL                  |
+|  1 | SIMPLE      | player_roster  | NULL       | ref    | PRIMARY,player_id,squad_id                    | player_id | 4       | kill_team_db_v1.session_rounds.player_id       |    18 |     0.27 | Using index condition |
+|  1 | SIMPLE      | squad          | NULL       | eq_ref | PRIMARY,faction_id                            | PRIMARY   | 4       | kill_team_db_v1.player_roster.squad_id         |     1 |   100.00 | NULL                  |
+|  1 | SIMPLE      | faction        | NULL       | eq_ref | PRIMARY                                       | PRIMARY   | 4       | kill_team_db_v1.squad.faction_id               |     1 |   100.00 | NULL                  |
++----+-------------+----------------+------------+--------+-----------------------------------------------+-----------+---------+------------------------------------------------+-------+----------+-----------------------+
+5 rows in set, 1 warning (0.00 sec)
