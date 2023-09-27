@@ -1,11 +1,7 @@
--- Для каждой фракции посчитать число сыгранных карт миссий. Нарисовать гистограмму.
-
 SELECT 
 	faction.name AS 'Faction''s name',
     COUNT(*) AS 'Cards played'
 FROM session_rounds
-INNER JOIN player
-	ON session_rounds.player_id = player.id
 INNER JOIN game_session
 	ON session_rounds.game_session_id = game_session.id
 INNER JOIN player_roster
