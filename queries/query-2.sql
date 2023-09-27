@@ -1,9 +1,9 @@
 -- Посчитать число карт миссий, сыгранных игроком А.
 
 SELECT 
-    player.name AS 'Имя игрока', 
-    player.surname AS 'Фамилия игрока', 
-    COUNT(*) AS 'Число сыгранных карт миссий'
+    player.name AS 'Player''s name', 
+    player.surname AS 'Player''s surname', 
+    COUNT(*) AS 'Cards played'
 FROM player
 INNER JOIN session_rounds 
     ON player.id = session_rounds.player_id

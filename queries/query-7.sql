@@ -1,7 +1,7 @@
 -- Найти производителя, миниатюрами которого не играл игрок А.
 
 SELECT 
-    manufacturer.name AS 'Название производителя'
+    manufacturer.name AS 'Manufacturer'' name'
 FROM manufacturer
 WHERE manufacturer.id NOT IN (
     SELECT manufacturer.id 

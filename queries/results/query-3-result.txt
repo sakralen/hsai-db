@@ -1,0 +1,24 @@
++---------------------+--------------+
+| Faction's name      | Cards played |
++---------------------+--------------+
+| Tau Empire          |         1916 |
+| Tyranids            |         3976 |
+| Adeptus Mechanicus  |        13964 |
+| Cultists            |         1920 |
+| Corsairs            |         3848 |
+| Necron              |         4012 |
+| Leagues of Votann   |         2080 |
+| Harlequins          |         7748 |
+| Grey Knights        |         9864 |
+| Chaos Daemons       |         3780 |
+| Craftworlds         |         3748 |
+| Chaos Space Marines |         4016 |
+| Thousand Sons       |         1764 |
+| Death Guard         |         3944 |
+| Kroot               |         1988 |
+| Drukhari            |         3792 |
+| Space Marines       |         1820 |
+| Genestealer Cults   |         1976 |
+| Agents of Imperium  |         3844 |
++---------------------+--------------+
+19 rows in set (2.17 sec)

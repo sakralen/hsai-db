@@ -1,0 +1,174 @@
++---------------------+------------------------------+-------------+
+| Game fields's type  | Card's name                  | Usage count |
++---------------------+------------------------------+-------------+
+| Город               | CAPTURE HOSTAGE & INFILTRATE |         482 |
+| Город               | DAMAGE LIMITATION            |         488 |
+| Город               | UPLOAD VIRAL CODE            |         509 |
+| Город               | ROB AND RANSACK              |         467 |
+| Город               | CHALLENGE                    |         477 |
+| Город               | EXECUTION                    |         530 |
+| Город               | TRIANGULATE                  |         509 |
+| Город               | DEADLY MARKSMAN              |         485 |
+| Город               | SABOTAGE                     |         521 |
+| Город               | RETRIEVAL                    |         483 |
+| Город               | MARK TARGET                  |         487 |
+| Город               | ROUT                         |         497 |
+| Город               | BEHIND ENEMY LINES           |         470 |
+| Город               | OVERRUN                      |         474 |
+| Город               | HEADHUNTER                   |         495 |
+| Город               | VANTAGE                      |         480 |
+| Город               | PROTECT ASSETS               |         463 |
+| Город               | INTERLOPER                   |         489 |
+| Город               | CENTRAL CONTROL              |         490 |
+| Город               | HOLD THE LINE                |         471 |
+| Город               | PLANT BANNER                 |         486 |
+| Город               | SEIZE GROUND                 |         479 |
+| Город               | PLANT SIGNAL BEACON          |         473 |
+| Город               | IMPLANT                      |         467 |
+| Пустыня             | MARK TARGET                  |         480 |
+| Пустыня             | PROTECT ASSETS               |         504 |
+| Пустыня             | DEADLY MARKSMAN              |         461 |
+| Пустыня             | BEHIND ENEMY LINES           |         499 |
+| Пустыня             | IMPLANT                      |         496 |
+| Пустыня             | UPLOAD VIRAL CODE            |         490 |
+| Пустыня             | TRIANGULATE                  |         481 |
+| Пустыня             | PLANT SIGNAL BEACON          |         487 |
+| Пустыня             | DAMAGE LIMITATION            |         456 |
+| Пустыня             | VANTAGE                      |         473 |
+| Пустыня             | SABOTAGE                     |         472 |
+| Пустыня             | CAPTURE HOSTAGE & INFILTRATE |         479 |
+| Пустыня             | HEADHUNTER                   |         481 |
+| Пустыня             | RETRIEVAL                    |         474 |
+| Пустыня             | HOLD THE LINE                |         495 |
+| Пустыня             | CHALLENGE                    |         472 |
+| Пустыня             | ROB AND RANSACK              |         466 |
+| Пустыня             | PLANT BANNER                 |         471 |
+| Пустыня             | ROUT                         |         485 |
+| Пустыня             | OVERRUN                      |         464 |
+| Пустыня             | INTERLOPER                   |         546 |
+| Пустыня             | CENTRAL CONTROL              |         486 |
+| Пустыня             | EXECUTION                    |         471 |
+| Пустыня             | SEIZE GROUND                 |         511 |
+| Лес                 | UPLOAD VIRAL CODE            |         465 |
+| Лес                 | DAMAGE LIMITATION            |         451 |
+| Лес                 | CAPTURE HOSTAGE & INFILTRATE |         488 |
+| Лес                 | SABOTAGE                     |         453 |
+| Лес                 | PROTECT ASSETS               |         474 |
+| Лес                 | SEIZE GROUND                 |         512 |
+| Лес                 | TRIANGULATE                  |         496 |
+| Лес                 | INTERLOPER                   |         470 |
+| Лес                 | ROB AND RANSACK              |         474 |
+| Лес                 | PLANT BANNER                 |         474 |
+| Лес                 | PLANT SIGNAL BEACON          |         468 |
+| Лес                 | DEADLY MARKSMAN              |         500 |
+| Лес                 | MARK TARGET                  |         519 |
+| Лес                 | CHALLENGE                    |         495 |
+| Лес                 | BEHIND ENEMY LINES           |         473 |
+| Лес                 | RETRIEVAL                    |         459 |
+| Лес                 | ROUT                         |         437 |
+| Лес                 | HEADHUNTER                   |         469 |
+| Лес                 | EXECUTION                    |         460 |
+| Лес                 | OVERRUN                      |         457 |
+| Лес                 | VANTAGE                      |         440 |
+| Лес                 | IMPLANT                      |         483 |
+| Лес                 | CENTRAL CONTROL              |         471 |
+| Лес                 | HOLD THE LINE                |         464 |
+| Космический корабль | VANTAGE                      |         473 |
+| Космический корабль | SEIZE GROUND                 |         485 |
+| Космический корабль | BEHIND ENEMY LINES           |         491 |
+| Космический корабль | PLANT BANNER                 |         468 |
+| Космический корабль | CENTRAL CONTROL              |         449 |
+| Космический корабль | DEADLY MARKSMAN              |         481 |
+| Космический корабль | SABOTAGE                     |         488 |
+| Космический корабль | MARK TARGET                  |         469 |
+| Космический корабль | CHALLENGE                    |         463 |
+| Космический корабль | DAMAGE LIMITATION            |         454 |
+| Космический корабль | IMPLANT                      |         474 |
+| Космический корабль | ROB AND RANSACK              |         467 |
+| Космический корабль | CAPTURE HOSTAGE & INFILTRATE |         482 |
+| Космический корабль | ROUT                         |         463 |
+| Космический корабль | HEADHUNTER                   |         498 |
+| Космический корабль | EXECUTION                    |         463 |
+| Космический корабль | PLANT SIGNAL BEACON          |         470 |
+| Космический корабль | TRIANGULATE                  |         480 |
+| Космический корабль | INTERLOPER                   |         468 |
+| Космический корабль | HOLD THE LINE                |         469 |
+| Космический корабль | OVERRUN                      |         446 |
+| Космический корабль | RETRIEVAL                    |         455 |
+| Космический корабль | UPLOAD VIRAL CODE            |         461 |
+| Космический корабль | PROTECT ASSETS               |         439 |
+| Подземелье          | CAPTURE HOSTAGE & INFILTRATE |         481 |
+| Подземелье          | DEADLY MARKSMAN              |         499 |
+| Подземелье          | CHALLENGE                    |         490 |
+| Подземелье          | IMPLANT                      |         498 |
+| Подземелье          | PLANT SIGNAL BEACON          |         536 |
+| Подземелье          | SEIZE GROUND                 |         478 |
+| Подземелье          | TRIANGULATE                  |         461 |
+| Подземелье          | ROUT                         |         513 |
+| Подземелье          | MARK TARGET                  |         486 |
+| Подземелье          | DAMAGE LIMITATION            |         506 |
+| Подземелье          | HEADHUNTER                   |         463 |
+| Подземелье          | ROB AND RANSACK              |         507 |
+| Подземелье          | INTERLOPER                   |         475 |
+| Подземелье          | HOLD THE LINE                |         513 |
+| Подземелье          | PROTECT ASSETS               |         504 |
+| Подземелье          | SABOTAGE                     |         487 |
+| Подземелье          | CENTRAL CONTROL              |         499 |
+| Подземелье          | UPLOAD VIRAL CODE            |         473 |
+| Подземелье          | EXECUTION                    |         480 |
+| Подземелье          | PLANT BANNER                 |         477 |
+| Подземелье          | VANTAGE                      |         500 |
+| Подземелье          | OVERRUN                      |         501 |
+| Подземелье          | BEHIND ENEMY LINES           |         473 |
+| Подземелье          | RETRIEVAL                    |         484 |
+| Крепость            | TRIANGULATE                  |         476 |
+| Крепость            | HEADHUNTER                   |         458 |
+| Крепость            | VANTAGE                      |         488 |
+| Крепость            | BEHIND ENEMY LINES           |         492 |
+| Крепость            | PLANT BANNER                 |         458 |
+| Крепость            | ROUT                         |         453 |
+| Крепость            | CHALLENGE                    |         501 |
+| Крепость            | SEIZE GROUND                 |         469 |
+| Крепость            | ROB AND RANSACK              |         493 |
+| Крепость            | EXECUTION                    |         466 |
+| Крепость            | PLANT SIGNAL BEACON          |         441 |
+| Крепость            | MARK TARGET                  |         471 |
+| Крепость            | UPLOAD VIRAL CODE            |         458 |
+| Крепость            | INTERLOPER                   |         507 |
+| Крепость            | CAPTURE HOSTAGE & INFILTRATE |         482 |
+| Крепость            | CENTRAL CONTROL              |         476 |
+| Крепость            | HOLD THE LINE                |         493 |
+| Крепость            | DEADLY MARKSMAN              |         444 |
+| Крепость            | OVERRUN                      |         467 |
+| Крепость            | PROTECT ASSETS               |         458 |
+| Крепость            | RETRIEVAL                    |         496 |
+| Крепость            | IMPLANT                      |         492 |
+| Крепость            | DAMAGE LIMITATION            |         452 |
+| Крепость            | SABOTAGE                     |         485 |
+| Небесный город      | HOLD THE LINE                |         481 |
+| Небесный город      | IMPLANT                      |         489 |
+| Небесный город      | DAMAGE LIMITATION            |         454 |
+| Небесный город      | ROUT                         |         456 |
+| Небесный город      | VANTAGE                      |         421 |
+| Небесный город      | BEHIND ENEMY LINES           |         434 |
+| Небесный город      | OVERRUN                      |         447 |
+| Небесный город      | TRIANGULATE                  |         464 |
+| Небесный город      | CAPTURE HOSTAGE & INFILTRATE |         428 |
+| Небесный город      | SABOTAGE                     |         429 |
+| Небесный город      | HEADHUNTER                   |         433 |
+| Небесный город      | INTERLOPER                   |         465 |
+| Небесный город      | CHALLENGE                    |         448 |
+| Небесный город      | PLANT BANNER                 |         453 |
+| Небесный город      | SEIZE GROUND                 |         495 |
+| Небесный город      | DEADLY MARKSMAN              |         496 |
+| Небесный город      | EXECUTION                    |         455 |
+| Небесный город      | CENTRAL CONTROL              |         451 |
+| Небесный город      | RETRIEVAL                    |         460 |
+| Небесный город      | PLANT SIGNAL BEACON          |         448 |
+| Небесный город      | PROTECT ASSETS               |         438 |
+| Небесный город      | MARK TARGET                  |         453 |
+| Небесный город      | UPLOAD VIRAL CODE            |         502 |
+| Небесный город      | ROB AND RANSACK              |         460 |
++---------------------+------------------------------+-------------+
+
+168 rows in set (0.64 sec)

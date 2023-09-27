@@ -1,8 +1,8 @@
 -- Посчитать число игроков с одинаковым числом партий. Нарисовать гистограмму.
 
 SELECT 
-	played_per_player.sessions_played as 'Число партий',
-	COUNT(*) as 'Число игроков'
+	played_per_player.sessions_played as 'Sessions count',
+	COUNT(*) as 'Players count'
 FROM (
 	SELECT 
 		player_id, 

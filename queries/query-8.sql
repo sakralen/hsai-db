@@ -1,9 +1,9 @@
 -- Для каждого поля и каждой карты миссии посчитать число их использований. Построить трёхмерную диаграмму.
 
 SELECT 
-    game_field.type AS 'Тип поля', 
-    mission_card.name AS 'Название карты миссии', 
-    COUNT(*) AS 'Число использований'
+    game_field.type AS 'Game fields''s type', 
+    mission_card.name AS 'Card''s name', 
+    COUNT(*) AS 'Usage count'
 FROM game_field
 INNER JOIN game_session 
     ON game_field.id = game_session.game_field_id

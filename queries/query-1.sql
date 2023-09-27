@@ -1,8 +1,8 @@
 -- Найти всех производителей, миниатюры которых участвовали на игровом поле А.
 
 SELECT 
-    game_field.type AS 'Тип игрового поля', 
-    manufacturer.name AS 'Название производителя'
+    game_field.type AS 'Game field''s type', 
+    manufacturer.name AS 'Manufacturer''s name'
 FROM game_field
 INNER JOIN game_session 
     ON game_field.id = game_session.game_field_id 
