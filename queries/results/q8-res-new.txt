@@ -1,0 +1,197 @@
++---------------------+------------------------------+-------------+
+| Game fields's type  | Card's name                  | Usage count |
++---------------------+------------------------------+-------------+
+| Планета колдунов    | HEADHUNTER                   |           0 |
+| Небесный город      | HEADHUNTER                   |         433 |
+| Крепость            | HEADHUNTER                   |         458 |
+| Подземелье          | HEADHUNTER                   |         463 |
+| Космический корабль | HEADHUNTER                   |         498 |
+| Лес                 | HEADHUNTER                   |         469 |
+| Пустыня             | HEADHUNTER                   |         481 |
+| Город               | HEADHUNTER                   |         495 |
+| Планета колдунов    | CHALLENGE                    |           0 |
+| Небесный город      | CHALLENGE                    |         448 |
+| Крепость            | CHALLENGE                    |         501 |
+| Подземелье          | CHALLENGE                    |         490 |
+| Космический корабль | CHALLENGE                    |         463 |
+| Лес                 | CHALLENGE                    |         495 |
+| Пустыня             | CHALLENGE                    |         472 |
+| Город               | CHALLENGE                    |         477 |
+| Планета колдунов    | ROUT                         |           0 |
+| Небесный город      | ROUT                         |         456 |
+| Крепость            | ROUT                         |         453 |
+| Подземелье          | ROUT                         |         513 |
+| Космический корабль | ROUT                         |         463 |
+| Лес                 | ROUT                         |         437 |
+| Пустыня             | ROUT                         |         485 |
+| Город               | ROUT                         |         497 |
+| Планета колдунов    | EXECUTION                    |           0 |
+| Небесный город      | EXECUTION                    |         455 |
+| Крепость            | EXECUTION                    |         466 |
+| Подземелье          | EXECUTION                    |         480 |
+| Космический корабль | EXECUTION                    |         463 |
+| Лес                 | EXECUTION                    |         460 |
+| Пустыня             | EXECUTION                    |         471 |
+| Город               | EXECUTION                    |         530 |
+| Планета колдунов    | DEADLY MARKSMAN              |           0 |
+| Небесный город      | DEADLY MARKSMAN              |         496 |
+| Крепость            | DEADLY MARKSMAN              |         444 |
+| Подземелье          | DEADLY MARKSMAN              |         499 |
+| Космический корабль | DEADLY MARKSMAN              |         481 |
+| Лес                 | DEADLY MARKSMAN              |         500 |
+| Пустыня             | DEADLY MARKSMAN              |         461 |
+| Город               | DEADLY MARKSMAN              |         485 |
+| Планета колдунов    | ROB AND RANSACK              |           0 |
+| Небесный город      | ROB AND RANSACK              |         460 |
+| Крепость            | ROB AND RANSACK              |         493 |
+| Подземелье          | ROB AND RANSACK              |         507 |
+| Космический корабль | ROB AND RANSACK              |         467 |
+| Лес                 | ROB AND RANSACK              |         474 |
+| Пустыня             | ROB AND RANSACK              |         466 |
+| Город               | ROB AND RANSACK              |         467 |
+| Планета колдунов    | SEIZE GROUND                 |           0 |
+| Небесный город      | SEIZE GROUND                 |         495 |
+| Крепость            | SEIZE GROUND                 |         469 |
+| Подземелье          | SEIZE GROUND                 |         478 |
+| Космический корабль | SEIZE GROUND                 |         485 |
+| Лес                 | SEIZE GROUND                 |         512 |
+| Пустыня             | SEIZE GROUND                 |         511 |
+| Город               | SEIZE GROUND                 |         479 |
+| Планета колдунов    | HOLD THE LINE                |           0 |
+| Небесный город      | HOLD THE LINE                |         481 |
+| Крепость            | HOLD THE LINE                |         493 |
+| Подземелье          | HOLD THE LINE                |         513 |
+| Космический корабль | HOLD THE LINE                |         469 |
+| Лес                 | HOLD THE LINE                |         464 |
+| Пустыня             | HOLD THE LINE                |         495 |
+| Город               | HOLD THE LINE                |         471 |
+| Планета колдунов    | PROTECT ASSETS               |           0 |
+| Небесный город      | PROTECT ASSETS               |         438 |
+| Крепость            | PROTECT ASSETS               |         458 |
+| Подземелье          | PROTECT ASSETS               |         504 |
+| Космический корабль | PROTECT ASSETS               |         439 |
+| Лес                 | PROTECT ASSETS               |         474 |
+| Пустыня             | PROTECT ASSETS               |         504 |
+| Город               | PROTECT ASSETS               |         463 |
+| Планета колдунов    | DAMAGE LIMITATION            |           0 |
+| Небесный город      | DAMAGE LIMITATION            |         454 |
+| Крепость            | DAMAGE LIMITATION            |         452 |
+| Подземелье          | DAMAGE LIMITATION            |         506 |
+| Космический корабль | DAMAGE LIMITATION            |         454 |
+| Лес                 | DAMAGE LIMITATION            |         451 |
+| Пустыня             | DAMAGE LIMITATION            |         456 |
+| Город               | DAMAGE LIMITATION            |         488 |
+| Планета колдунов    | PLANT BANNER                 |           0 |
+| Небесный город      | PLANT BANNER                 |         453 |
+| Крепость            | PLANT BANNER                 |         458 |
+| Подземелье          | PLANT BANNER                 |         477 |
+| Космический корабль | PLANT BANNER                 |         468 |
+| Лес                 | PLANT BANNER                 |         474 |
+| Пустыня             | PLANT BANNER                 |         471 |
+| Город               | PLANT BANNER                 |         486 |
+| Планета колдунов    | CENTRAL CONTROL              |           0 |
+| Небесный город      | CENTRAL CONTROL              |         451 |
+| Крепость            | CENTRAL CONTROL              |         476 |
+| Подземелье          | CENTRAL CONTROL              |         499 |
+| Космический корабль | CENTRAL CONTROL              |         449 |
+| Лес                 | CENTRAL CONTROL              |         471 |
+| Пустыня             | CENTRAL CONTROL              |         486 |
+| Город               | CENTRAL CONTROL              |         490 |
+| Планета колдунов    | CAPTURE HOSTAGE & INFILTRATE |           0 |
+| Небесный город      | CAPTURE HOSTAGE & INFILTRATE |         428 |
+| Крепость            | CAPTURE HOSTAGE & INFILTRATE |         482 |
+| Подземелье          | CAPTURE HOSTAGE & INFILTRATE |         481 |
+| Космический корабль | CAPTURE HOSTAGE & INFILTRATE |         482 |
+| Лес                 | CAPTURE HOSTAGE & INFILTRATE |         488 |
+| Пустыня             | CAPTURE HOSTAGE & INFILTRATE |         479 |
+| Город               | CAPTURE HOSTAGE & INFILTRATE |         482 |
+| Планета колдунов    | BEHIND ENEMY LINES           |           0 |
+| Небесный город      | BEHIND ENEMY LINES           |         434 |
+| Крепость            | BEHIND ENEMY LINES           |         492 |
+| Подземелье          | BEHIND ENEMY LINES           |         473 |
+| Космический корабль | BEHIND ENEMY LINES           |         491 |
+| Лес                 | BEHIND ENEMY LINES           |         473 |
+| Пустыня             | BEHIND ENEMY LINES           |         499 |
+| Город               | BEHIND ENEMY LINES           |         470 |
+| Планета колдунов    | UPLOAD VIRAL CODE            |           0 |
+| Небесный город      | UPLOAD VIRAL CODE            |         502 |
+| Крепость            | UPLOAD VIRAL CODE            |         458 |
+| Подземелье          | UPLOAD VIRAL CODE            |         473 |
+| Космический корабль | UPLOAD VIRAL CODE            |         461 |
+| Лес                 | UPLOAD VIRAL CODE            |         465 |
+| Пустыня             | UPLOAD VIRAL CODE            |         490 |
+| Город               | UPLOAD VIRAL CODE            |         509 |
+| Планета колдунов    | IMPLANT                      |           0 |
+| Небесный город      | IMPLANT                      |         488 |
+| Крепость            | IMPLANT                      |         492 |
+| Подземелье          | IMPLANT                      |         497 |
+| Космический корабль | IMPLANT                      |         471 |
+| Лес                 | IMPLANT                      |         481 |
+| Пустыня             | IMPLANT                      |         494 |
+| Город               | IMPLANT                      |         467 |
+| Планета колдунов    | SABOTAGE                     |           0 |
+| Небесный город      | SABOTAGE                     |         429 |
+| Крепость            | SABOTAGE                     |         485 |
+| Подземелье          | SABOTAGE                     |         487 |
+| Космический корабль | SABOTAGE                     |         488 |
+| Лес                 | SABOTAGE                     |         453 |
+| Пустыня             | SABOTAGE                     |         472 |
+| Город               | SABOTAGE                     |         521 |
+| Планета колдунов    | INTERLOPER                   |           0 |
+| Небесный город      | INTERLOPER                   |         466 |
+| Крепость            | INTERLOPER                   |         507 |
+| Подземелье          | INTERLOPER                   |         476 |
+| Космический корабль | INTERLOPER                   |         471 |
+| Лес                 | INTERLOPER                   |         472 |
+| Пустыня             | INTERLOPER                   |         548 |
+| Город               | INTERLOPER                   |         489 |
+| Планета колдунов    | MARK TARGET                  |           0 |
+| Небесный город      | MARK TARGET                  |         453 |
+| Крепость            | MARK TARGET                  |         471 |
+| Подземелье          | MARK TARGET                  |         486 |
+| Космический корабль | MARK TARGET                  |         469 |
+| Лес                 | MARK TARGET                  |         519 |
+| Пустыня             | MARK TARGET                  |         480 |
+| Город               | MARK TARGET                  |         487 |
+| Планета колдунов    | TRIANGULATE                  |           0 |
+| Небесный город      | TRIANGULATE                  |         464 |
+| Крепость            | TRIANGULATE                  |         476 |
+| Подземелье          | TRIANGULATE                  |         461 |
+| Космический корабль | TRIANGULATE                  |         480 |
+| Лес                 | TRIANGULATE                  |         496 |
+| Пустыня             | TRIANGULATE                  |         481 |
+| Город               | TRIANGULATE                  |         509 |
+| Планета колдунов    | PLANT SIGNAL BEACON          |           0 |
+| Небесный город      | PLANT SIGNAL BEACON          |         448 |
+| Крепость            | PLANT SIGNAL BEACON          |         441 |
+| Подземелье          | PLANT SIGNAL BEACON          |         536 |
+| Космический корабль | PLANT SIGNAL BEACON          |         470 |
+| Лес                 | PLANT SIGNAL BEACON          |         468 |
+| Пустыня             | PLANT SIGNAL BEACON          |         487 |
+| Город               | PLANT SIGNAL BEACON          |         473 |
+| Планета колдунов    | VANTAGE                      |           0 |
+| Небесный город      | VANTAGE                      |         421 |
+| Крепость            | VANTAGE                      |         488 |
+| Подземелье          | VANTAGE                      |         500 |
+| Космический корабль | VANTAGE                      |         473 |
+| Лес                 | VANTAGE                      |         440 |
+| Пустыня             | VANTAGE                      |         473 |
+| Город               | VANTAGE                      |         480 |
+| Планета колдунов    | RETRIEVAL                    |           0 |
+| Небесный город      | RETRIEVAL                    |         460 |
+| Крепость            | RETRIEVAL                    |         496 |
+| Подземелье          | RETRIEVAL                    |         484 |
+| Космический корабль | RETRIEVAL                    |         455 |
+| Лес                 | RETRIEVAL                    |         459 |
+| Пустыня             | RETRIEVAL                    |         474 |
+| Город               | RETRIEVAL                    |         483 |
+| Планета колдунов    | OVERRUN                      |           0 |
+| Небесный город      | OVERRUN                      |         447 |
+| Крепость            | OVERRUN                      |         467 |
+| Подземелье          | OVERRUN                      |         501 |
+| Космический корабль | OVERRUN                      |         446 |
+| Лес                 | OVERRUN                      |         457 |
+| Пустыня             | OVERRUN                      |         464 |
+| Город               | OVERRUN                      |         474 |
++---------------------+------------------------------+-------------+
+192 rows in set (2.90 sec)
