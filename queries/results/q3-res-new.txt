@@ -1,0 +1,29 @@
++---------------------------------+----------------------------------------+
+| Название фракции                | Число сыгранных карт                   |
++---------------------------------+----------------------------------------+
+| Adepta Sororitas                |                                      0 |
+| Adeptus Mechanicus              |                                   8064 |
+| Agents of Imperium              |                                   3844 |
+| Adeptus Custodes                |                                      0 |
+| Adeptus Mechanicus              |                                   5900 |
+| Astra Militarum                 |                                      0 |
+| Grey Knights                    |                                   9864 |
+| Space Marines                   |                                   1820 |
+| Chaos Daemons                   |                                   3780 |
+| Chaos Space Marines             |                                   4016 |
+| Cultists                        |                                   1920 |
+| Death Guard                     |                                   3944 |
+| Thousand Sons                   |                                   1764 |
+| Corsairs                        |                                   3848 |
+| Craftworlds                     |                                   3748 |
+| Drukhari                        |                                   3792 |
+| Harlequins                      |                                   7748 |
+| Genestealer Cults               |                                   1976 |
+| Kroot                           |                                   1988 |
+| Necron                          |                                   4012 |
+| Orks                            |                                      0 |
+| Tau Empire                      |                                   1916 |
+| Tyranids                        |                                   3976 |
+| Leagues of Votann               |                                   2080 |
++---------------------------------+----------------------------------------+
+24 rows in set (0.37 sec)
