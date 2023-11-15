@@ -4,7 +4,8 @@ DROP TABLE IF EXISTS day_stat, month_stat, year_stat;
 DROP TRIGGER IF EXISTS insert_session_trigger;
 DROP TRIGGER IF EXISTS update_session_trigger;
 DROP TRIGGER IF EXISTS delete_session_trigger;
--- DELETE FROM game_session WHERE id > 10000;
+
+DELETE FROM game_session WHERE id > 10000;
 
 CREATE TABLE day_stat (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -94,15 +95,15 @@ CREATE TRIGGER delete_session_trigger
 AFTER DELETE
 ON game_session FOR EACH ROW
 BEGIN
-	IF EXISTS (SELECT value FROM day_stat WHERE value = DAY(OLD.date)) THEN
+	IF EXISTS (SELECT value FROM day_stat WHERE value = DAY(OLD.date) AND amount > 0) THEN
 		UPDATE day_stat SET amount = amount - 1 WHERE value = DAY(OLD.date);
 	END IF;
     #
-    IF EXISTS (SELECT value FROM month_stat WHERE value = MONTH(OLD.date)) THEN
+    IF EXISTS (SELECT value FROM month_stat WHERE value = MONTH(OLD.date) AND amount > 0) THEN
 		UPDATE month_stat SET amount = amount - 1 WHERE value = MONTH(OLD.date);
 	END IF;
     #
-    IF EXISTS (SELECT value FROM year_stat WHERE value = YEAR(OLD.date)) THEN
+    IF EXISTS (SELECT value FROM year_stat WHERE value = YEAR(OLD.date) AND amount > 0) THEN
 		UPDATE year_stat SET amount = amount - 1 WHERE value = YEAR(OLD.date);
 	END IF;
 END; //
