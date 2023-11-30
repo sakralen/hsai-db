@@ -4,6 +4,7 @@ SELECT
 	COUNT(sr.id) sessions_played
 FROM player p
 LEFT JOIN session_rounds sr
-	ON p.id = sr.player_id AND sr.round_id = 1
+	ON p.id = sr.player_id
+WHERE sr.round_id = 1 OR sr.round_id is NULL	
 GROUP BY p.id
 ORDER BY p.id
