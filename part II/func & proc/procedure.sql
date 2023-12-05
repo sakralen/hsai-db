@@ -16,11 +16,11 @@ BEGIN
 			GROUP BY pid
 			ORDER BY pid DESC
 			LIMIT 1) winner_score);
-            
+
 	SET @squad_id = (
 		SELECT
 			session_roster.sid
-		FROM (    
+		FROM (
 			SELECT
 				pr.player_id pid,
 				pr.squad_id sid
@@ -37,12 +37,12 @@ BEGIN
 				ON gs.player_2_roster_id = pr.id
 			WHERE gs.id = session_id) session_roster
 		WHERE session_roster.pid = @winner_id);
-        
+
 	SELECT
 		get_full_name(p.surname, p.name, p.middlename) 'ФИО',
-        s.name 'Отряд'
+		s.name 'Отряд'
 	FROM player p
-    INNER JOIN squad s
+	INNER JOIN squad s
 	WHERE p.id = @winner_id 
 		AND s.id = @squad_id;
 	END //
