@@ -1,10 +1,10 @@
-USE kill_team_db_v1;
-
 CREATE OR REPLACE VIEW sessions_per_player AS
 SELECT 
-	player_id, 
-	COUNT(*) as sessions_played
-FROM session_rounds
-WHERE session_rounds.round_id = 1
-GROUP BY player_id
-ORDER BY player_id ASC;
+	p.id player_id, 
+	COUNT(sr.id) sessions_played
+FROM player p
+LEFT JOIN session_rounds sr
+	ON p.id = sr.player_id
+WHERE sr.round_id = 1 OR sr.round_id is NULL
+GROUP BY p.id
+ORDER BY p.id
